@@ -3,7 +3,7 @@
 #import "section.h"
 
 
-int initialize_wharehouse(){
+void initialize_wharehouse(){
     srand(time(nullptr));  // renew seed to random number
     for (int i = 0; i < calculateRancomNumber(7,10); ++i) {
         char id = i+65;
@@ -15,5 +15,5 @@ int initialize_wharehouse(){
         };
         printSection(section);
     };
-    return 0;
+
 }
