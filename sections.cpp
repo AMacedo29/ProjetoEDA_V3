@@ -1,5 +1,5 @@
 #include <iostream>
-#include "section.h"
+#include "sections.h"
 
 
 void printSection(Section& section){

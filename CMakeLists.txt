@@ -9,5 +9,7 @@ add_executable(ProjetoEDA main.cpp
         utils.cpp
         utils.h
         sections.cpp
-        section.h
+        sections.h
+        pecas.cpp
+        pecas.h
 )

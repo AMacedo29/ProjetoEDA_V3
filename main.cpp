@@ -2,7 +2,6 @@
 #include "initialization.h"
 
 
-
 int menu_manager() {
 
     bool sair = false;
