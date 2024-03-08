@@ -1,3 +1,0 @@
-C:/Users/andre/CLionProjects/ProjetoEDA/cmake-build-debug/CMakeFiles/ProjetoEDA.dir
-C:/Users/andre/CLionProjects/ProjetoEDA/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/andre/CLionProjects/ProjetoEDA/cmake-build-debug/CMakeFiles/rebuild_cache.dir
