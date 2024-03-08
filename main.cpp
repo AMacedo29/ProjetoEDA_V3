@@ -6,7 +6,7 @@
 int menu_manager() {
 
     bool sair = false;
-    char opcao;
+    char option;
 
     do {
         std::cout << "***** Bem Vindo Gestor *****" << std::endl;
@@ -18,11 +18,11 @@ int menu_manager() {
         std::cout << "6 - Carregar Armazem " << std::endl;
         std::cout << "7 - Imprimir Armazem " << std::endl;
         std::cout << "0 - Sair "<< std::endl;
-        std::cout << "Escolha a sua opcao: " << std::endl;
-        std::cin >> opcao;
+        std::cout << "Escolha a sua option: " << std::endl;
+        std::cin >> option;
         std::cout << std::endl;
 
-        switch (opcao) {
+        switch (option) {
             case '1':
                 std::cout << "funciona" << std::endl;
                 break;
@@ -51,7 +51,7 @@ int menu_manager() {
 }
 
 int main() {
-    //initialize_wharehouse();
+    initialize_wharehouse();
     bool sair = false;
     char option0;
     int dia=1;

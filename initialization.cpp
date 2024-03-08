@@ -15,5 +15,5 @@ int initialize_wharehouse(){
         };
         printSection(section);
     };
-
+    return 0;
 }
