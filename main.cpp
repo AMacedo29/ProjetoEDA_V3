@@ -56,6 +56,7 @@ int main() {
     int dia=1;
 
     do{
+        std::cout << std::endl;
         std::cout << "Dia (s)eguinte *********** (g)estao" << std::endl;
         std::cout << "Seleccione a sua opcao:" << std::endl;
         std::cin >> option0;

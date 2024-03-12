@@ -4,7 +4,6 @@
 struct Section{
     char id;
     int capacity;
-    char category[100];
 };
 
 void printSection(Section& section);
