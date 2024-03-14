@@ -4,9 +4,12 @@
 struct Section{
     char id;
     int capacity;
-    char category[100];
+    int *listaPecas;
 };
 
 void printSection(Section& section);
 
+//int* iniciarListaPecas(Section& section);
+
+//void printLista(Section& section);
 #endif //PROJETOEDA_SECTIONS_H
