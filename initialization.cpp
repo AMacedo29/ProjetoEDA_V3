@@ -1,6 +1,6 @@
 #include <iostream>
 #include "utils.h"
-#import "sections.h"
+#include "sections.h"
 
 
 void initialize_wharehouse(){
@@ -16,7 +16,7 @@ void initialize_wharehouse(){
             random_capacity
         };
         printSection(section);
-        printLista(section);
+        //printLista(section);
     };
 
 

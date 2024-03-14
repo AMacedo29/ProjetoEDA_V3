@@ -1,6 +1,8 @@
 #ifndef PROJETOEDA_INITIALIZATION_H
 #define PROJETOEDA_INITIALIZATION_H
 
+
 void initialize_wharehouse();
+
 
 #endif //PROJETOEDA_INITIALIZATION_H
