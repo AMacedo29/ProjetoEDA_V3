@@ -3,14 +3,16 @@
 
 
 void printSection(Section& section){
-    std::cout << " Seccao " << section.id << "  | " << " Categoria: " << "categoria" << "  | " << " Capacity: " << section.capacity << "  | "  << std::endl;
+    std::cout << " Seccao " << section.id << "  | " << " Categoria: " << "categoria"
+    << "  | " << " Capacidade: " << section.capacity << "  | "  << " Quantidade: " <<  "0"  <<  "  | "
+    << " Faturacao: " << "0" <<  std::endl;
 }
-//ID único, capacidade máxima e categoria
 
-int* iniciarListaPecas(Section& section){
+/*int* iniciarListaPecas(Section& section){
     section.listaPecas = new int[section.capacity];
     return section.listaPecas;
 }
+*/
 
 //void printLista(Section& section){
     //iniciarListaPecas(section);

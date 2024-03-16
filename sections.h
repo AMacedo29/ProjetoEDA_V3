@@ -4,6 +4,8 @@
 struct Section{
     char id;
     int capacity;
+    int totalIncome;
+    int serialNumberReg;
     int *listaPecas;
 };
 

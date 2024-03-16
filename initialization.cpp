@@ -16,7 +16,6 @@ void initialize_wharehouse(){
             random_capacity
         };
         printSection(section);
-        //printLista(section);
     };
 
 
