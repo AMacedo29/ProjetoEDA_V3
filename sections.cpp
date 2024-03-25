@@ -1,28 +1,28 @@
 #include <iostream>
 #include "sections.h"
+#include "sales.h"
+#include "utils.h"
 
 
-void printSection(Section& section){
-    std::cout << " Seccao " << section.id << "  | " << " Categoria: " << section.category
-    << "  | " << " Capacidade: " << section.capacity << "  | "  << " Quantidade: " <<  "0"  <<  "  | "
-    << " Faturacao: " << "0" <<  std::endl;
-}
-
-// nao apagar pode ser util
-/*
-int* iniciarListaPecas(Section& section){
-    section.listaPecas = new int[section.capacity];
-    return section.listaPecas;
-}
-
-void printLista(Section& section){
-    iniciarListaPecas(section);
-    for (int i = 0; i < section.capacity; i++) {
-        section.listaPecas[i] = 1;
+Section* inicializeSections(Section& section){
+    srand(time(nullptr));
+    section.tamanho = calculateRandomNumber(7, 10);
+    Section* sectionsArray = new Section[section.tamanho];
+    for (int i = 0; i < section.tamanho ; ++i) {
+        sectionsArray[i].id = static_cast<char>(i + 65);
+        sectionsArray[i].capacity = calculateRandomNumber(3, 6);
     }
-    for (int i = 0; i < section.capacity; i++) {
-        std::cout << section.listaPecas[i] << " ";
-    }
-    std::cout << std::endl;
+    return sectionsArray;
 }
- */
+
+void printSection(Section& section, Section* sectionsArray){
+    std::cout << "          *********************************************" << std::endl;
+    std::cout << "          *** Armazem EDA  |  Total Faturacao " << getTotalSales << " $" << " ***" << std::endl;
+    std::cout << "          *********************************************" << std::endl;
+    for (int i = 0; i < section.tamanho; ++i) {
+        std::cout << " Seccao " << sectionsArray[i].id << "  | " << " Categoria: " << section.category
+                  << "  | " << " Capacidade: " << sectionsArray[i].capacity << "  | " << " Quantidade: " << "0" << "  | "
+                  << " Faturacao: " << "0" << std::endl;
+    }
+}
+

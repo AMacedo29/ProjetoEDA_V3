@@ -4,14 +4,16 @@
 struct Section{
     char id;
     int capacity;
-    std::string category; // se isto ficar na linha 6 da erro
+    std::string category;
     int quantity;
-    Section *sections;
     int totalIncome;
     int serialNumberReg;
     int *listaPecas;
+    int tamanho;
 };
 
-void printSection(Section& section);
+Section* inicializeSections(Section& section);
+
+void printSection(Section& section, Section* sectionsArray);
 
 #endif //PROJETOEDA_SECTIONS_H

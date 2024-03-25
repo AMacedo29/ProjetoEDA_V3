@@ -1,6 +1,6 @@
 #include <iostream>
-#include "initialization.h"
 #include "pecas.h"
+#include "sections.h"
 
 int menu_manager() {
 
@@ -50,7 +50,9 @@ int menu_manager() {
 }
 
 int main() {
-    initialize_wharehouse();
+    Section section;
+    Section* sectionsArray = inicializeSections(section);
+    printSection(section,sectionsArray);
     Peca* listaChegada = iniciarListaChegada();
     printListaChegada(listaChegada);
     bool sair = false;
