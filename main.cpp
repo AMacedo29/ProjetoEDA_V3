@@ -53,7 +53,6 @@ int main() {
     initialize_wharehouse();
     Peca* listaChegada = iniciarListaChegada();
     printListaChegada(listaChegada);
-    delete[] listaChegada;
     bool sair = false;
     char option0;
     int dia=1;

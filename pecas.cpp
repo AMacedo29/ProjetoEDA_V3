@@ -5,7 +5,7 @@
 #include "pecas.h"
 
 Peca* iniciarListaChegada() {
-    Peca* listaChegada = new Peca[10];
+    Peca* listaChegada = new Peca[50];
     srand(time(nullptr));
     for (int i = 0; i < 10; ++i) {
         listaChegada[i].sellprob = calculateRandomNumber(5,50);

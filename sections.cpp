@@ -8,8 +8,7 @@ void printSection(Section& section){
     << " Faturacao: " << "0" <<  std::endl;
 }
 
-//se o que está comentado já n serve para nada já pode ir de cana
-
+// nao apagar pode ser util
 /*
 int* iniciarListaPecas(Section& section){
     section.listaPecas = new int[section.capacity];

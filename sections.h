@@ -3,9 +3,10 @@
 
 struct Section{
     char id;
-    //char category[100]; // como isto n está a receber nada o print está ♥ ♣ ♦ ♠
     int capacity;
     std::string category; // se isto ficar na linha 6 da erro
+    int quantity;
+    Section *sections;
     int totalIncome;
     int serialNumberReg;
     int *listaPecas;
