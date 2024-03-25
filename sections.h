@@ -3,7 +3,9 @@
 
 struct Section{
     char id;
+    //char category[100]; // como isto n está a receber nada o print está ♥ ♣ ♦ ♠
     int capacity;
+    std::string category; // se isto ficar na linha 6 da erro
     int totalIncome;
     int serialNumberReg;
     int *listaPecas;
@@ -11,7 +13,4 @@ struct Section{
 
 void printSection(Section& section);
 
-//int* iniciarListaPecas(Section& section);
-
-//void printLista(Section& section);
 #endif //PROJETOEDA_SECTIONS_H

@@ -12,4 +12,6 @@ add_executable(ProjetoEDA main.cpp
         sections.h
         pecas.cpp
         pecas.h
+        sales.cpp
+        sales.h
 )

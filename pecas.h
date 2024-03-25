@@ -9,8 +9,6 @@ struct Peca {
     int price;
 };
 
-//int pecasPrice();
-
 Peca* iniciarListaChegada();
 
 void printListaChegada(Peca* listaChegada);

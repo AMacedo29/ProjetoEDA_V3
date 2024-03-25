@@ -1,11 +1,12 @@
 #include <iostream>
 #include "utils.h"
 #include "sections.h"
+#include "sales.h"
 
 
 void initialize_wharehouse(){
     std::cout << "          *********************************************" << std::endl;
-    std::cout << "          *** Armazem EDA  |  Total Faturacao" << "     " << "$" << " ***" << std::endl;
+    std::cout << "          *** Armazem EDA  |  Total Faturacao " << getTotalSales << " $" << " ***" << std::endl;
     std::cout << "          *********************************************" << std::endl;
     srand(time(nullptr));  // renew seed to random number
     for (int i = 0; i < calculateRandomNumber(7, 10); ++i) {
@@ -17,6 +18,4 @@ void initialize_wharehouse(){
         };
         printSection(section);
     };
-
-
 }
