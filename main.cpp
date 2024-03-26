@@ -1,6 +1,7 @@
 #include <iostream>
 #include "pecas.h"
 #include "sections.h"
+#include "readFiles.h"
 
 int menu_manager() {
 
@@ -55,6 +56,8 @@ int main() {
     printSection(section,sectionsArray);
     Peca* listaChegada = iniciarListaChegada();
     printListaChegada(listaChegada);
+    std::string categorias = readCategorias();
+    std::cout << "Categorias lidas do arquivo:\n" << categorias;
     bool sair = false;
     char option0;
     int dia=1;

@@ -20,8 +20,8 @@ void printSection(Section& section, Section* sectionsArray){
     std::cout << "          *** Armazem EDA  |  Total Faturacao " << getTotalSales << " $" << " ***" << std::endl;
     std::cout << "          *********************************************" << std::endl;
     for (int i = 0; i < section.tamanho; ++i) {
-        std::cout << " Seccao " << sectionsArray[i].id << "  | " << " Categoria: " << section.category
-                  << "  | " << " Capacidade: " << sectionsArray[i].capacity << "  | " << " Quantidade: " << "0" << "  | "
+        std::cout << " Seccao " << sectionsArray[i].id << "  | " << " Categoria: " << sectionsArray[i].category
+                  << "  | " << " Capacidade: " << sectionsArray[i].capacity << "  | " << " Quantidade: " << sectionsArray[i].quantity << "  | "
                   << " Faturacao: " << "0" << std::endl;
     }
 }

@@ -2,7 +2,7 @@
 #define PROJETOEDA_PECAS_H
 
 struct Peca {
-    std::string supplier;
+    std::string brand;
     std::string category;
     int sellprob;
     int serialNumber;
