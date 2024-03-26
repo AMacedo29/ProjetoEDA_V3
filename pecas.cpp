@@ -11,8 +11,8 @@ Peca* iniciarListaChegada() {
         listaChegada[i].sellprob = calculateRandomNumber(5,50);
         listaChegada[i].serialNumber = calculateRandomNumber(1000,9999);
         listaChegada[i].price = calculateRandomNumber(2, 180) * 5;
-        listaChegada[i].category = "PEC"; // mudar para receber do ficheiro categorias.txt
-        listaChegada[i].brand = "Tillers"; // mudar para receber do ficheiro marcas.txt
+        listaChegada[i].category = getRandomCategoria(); // gera uma categoria aleatoria para a peca
+        listaChegada[i].brand = getRandomMarca(); // gera uma marca aleatoria para a peca
     }
     return listaChegada;
 }

@@ -3,4 +3,8 @@
 
 int calculateRandomNumber(int min, int max);
 
+std::string getRandomMarca();
+
+std::string getRandomCategoria();
+
 #endif //PROJETOEDA_UTILS_H

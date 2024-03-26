@@ -2,6 +2,7 @@
 #include "pecas.h"
 #include "sections.h"
 #include "readFiles.h"
+#include "utils.h"
 
 int menu_manager() {
 
