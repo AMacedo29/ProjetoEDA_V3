@@ -4,7 +4,6 @@
 #include "utils.h"
 
 int menu_manager() {
-
     bool sair = false;
     char option;
 
@@ -24,19 +23,25 @@ int menu_manager() {
 
         switch (option) {
             case '1':
-                std::cout << "funciona" << std::endl;
+                std::cout << "opcao 1 " << std::endl;
                 break;
             case '2':
+                std::cout << "opcao 2 " << std::endl;
                 break;
             case '3':
+                std::cout << "opcao 3 " << std::endl;
                 break;
             case '4':
+                std::cout << "opcao 4 " << std::endl;
                 break;
             case '5':
+                std::cout << "opcao 5 " << std::endl;
                 break;
             case '6':
+                std::cout << "opcao 6 " << std::endl;
                 break;
             case '7':
+                std::cout << "opcao 7 " << std::endl;
                 break;
             case '0':
                 std::cout << "Escolheu a opcao Sair. Adeus!" << std::endl;
