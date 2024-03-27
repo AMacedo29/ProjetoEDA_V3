@@ -12,6 +12,4 @@ add_executable(ProjetoEDA main.cpp
         pecas.h
         sales.cpp
         sales.h
-        readFiles.h
-        readFiles.cpp
 )
