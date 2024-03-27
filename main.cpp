@@ -2,6 +2,7 @@
 #include "pecas.h"
 #include "sections.h"
 #include "utils.h"
+#include "simulator.h"
 
 int menu_manager() {
     bool sair = false;
@@ -75,7 +76,7 @@ int main() {
             case 's':
                 std::cout << "Dia: "  << dia << std::endl;
                 dia++;
-                adicionarPecas(listaChegada, NextDayPecas);
+                adicionarPeca(listaChegada, NextDayPecas, section, sectionsArray);
                 mostrarPecas(listaChegada, NextDayPecas, dia);
                 break;
             case 'g':

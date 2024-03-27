@@ -1,5 +1,6 @@
 #ifndef PROJETOEDA_SECTIONS_H
 #define PROJETOEDA_SECTIONS_H
+#include "pecas.h"
 
 struct Section{
     char id;
@@ -15,5 +16,7 @@ struct Section{
 Section* inicializeSections(Section& section);
 
 void printSection(Section& section, Section* sectionsArray);
+
+//void addPecaToSection(Peca* listaChegada, Section* sectionsArray, Section& section);
 
 #endif //PROJETOEDA_SECTIONS_H

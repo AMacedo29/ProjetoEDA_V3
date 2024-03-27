@@ -2,6 +2,7 @@
 #include "sections.h"
 #include "sales.h"
 #include "utils.h"
+#include "pecas.h"
 
 
 Section* inicializeSections(Section& section){
@@ -15,6 +16,18 @@ Section* inicializeSections(Section& section){
     }
     return sectionsArray;
 }
+
+/*
+void addPecaToSection(Peca* listaChegada, Section* sectionsArray, Section& section){
+    for (int i = 0; i < section.tamanho; i++){
+        for (int j = 0; j < 10; j++) // falta funcao para saber o tamanho da lista de chegada
+            if (sectionsArray[i].category == listaChegada[j].category){
+                std::cout << "      " << listaChegada[j].category << "  |  " <<  listaChegada[j].brand
+                          << "  |  " <<  listaChegada[j].serialNumber<< "  |  "  <<  listaChegada[j].price << " $" <<std::endl;
+            }
+    }
+}
+*/
 
 void printSection(Section& section, Section* sectionsArray){
     std::cout << "          *********************************************" << std::endl;
