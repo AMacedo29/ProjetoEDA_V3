@@ -3,6 +3,7 @@
 
 
 void sellPeca();
+
 int getTotalSales();
 
 #endif //PROJETOEDA_SALES_H

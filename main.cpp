@@ -64,6 +64,7 @@ int main() {
     bool sair = false;
     char option0;
     int dia=1;
+    int NextDayPecas = 10;
 
     do{
         std::cout << std::endl;
@@ -74,6 +75,8 @@ int main() {
             case 's':
                 std::cout << "Dia: "  << dia << std::endl;
                 dia++;
+                adicionarPecas(listaChegada, NextDayPecas);
+                mostrarPecas(listaChegada, NextDayPecas, dia);
                 break;
             case 'g':
                 menu_manager();
@@ -87,6 +90,4 @@ int main() {
         }
     }while (!sair);
     return 0;
-
 }
-
