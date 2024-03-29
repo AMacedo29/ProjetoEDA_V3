@@ -97,6 +97,7 @@ int main() {
                 dia++;
                 adicionarPeca(listaChegada, NextDayPecas, section, sectionsArray);
                 mostrarPecas(listaChegada, NextDayPecas, dia);
+                std::cout << listaDeChegadaSize << std::endl;
                 break;
             case 'g':
                 menu_manager();

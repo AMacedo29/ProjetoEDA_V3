@@ -6,8 +6,11 @@
 #include "pecas.h"
 #include "sections.h"
 
+
+int listaDeChegadaSize = 0; // variavel global para guardar o tamanho da lista
+
 void adicionarPeca(Peca* listaChegada, int& NextDayPecas, Section& section, Section* sectionsArray) {
-    if (NextDayPecas >= 50) {
+    if (NextDayPecas >= 30) {
         std::cout << "A lista de chegada esta cheia. Nao e possivel adicionar mais pecas." << std::endl;
         return;
     }
@@ -20,9 +23,11 @@ void adicionarPeca(Peca* listaChegada, int& NextDayPecas, Section& section, Sect
         listaChegada[NextDayPecas].category = sectionsArray[indiceRandomCat].category; // gera uma categoria aleatoria para a peca
         listaChegada[NextDayPecas].brand = getRandomMarca(); // gera uma marca aleatoria para a peca
         NextDayPecas++;
+        if (listaDeChegadaSize < 30) {
+            listaDeChegadaSize++;
+        }
     }
 }
-
 
 void mostrarPecas(Peca* listaChegada, int NextDayPecas, int dia) {
     std::cout << "*******************************************" << std::endl;

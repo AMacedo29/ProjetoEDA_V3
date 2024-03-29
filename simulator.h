@@ -6,4 +6,6 @@ void adicionarPeca(Peca* listaChegada, int& NextDayPecas, Section& section, Sect
 
 void mostrarPecas(Peca* listaChegada, int NextDayPecas, int dia);
 
+extern int listaDeChegadaSize; // tive q usar extern pq a variavel está declarada no simulador.cpp
+
 #endif //PROJETOEDA_SIMULATOR_H

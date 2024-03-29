@@ -3,7 +3,7 @@
 #include <cstdlib> // For the rand() function
 #include <ctime>   // For the time() function
 #include "pecas.h"
-
+#include "simulator.h" // para a listaDeChegadaSize
 
 Peca* iniciarListaChegada() {
     Peca* listaChegada = new Peca[50];
@@ -14,6 +14,7 @@ Peca* iniciarListaChegada() {
         listaChegada[i].price = calculateRandomNumber(2, 180) * 5;
         listaChegada[i].category = getRandomCategoria(); // gera uma categoria aleatoria para a peca
         listaChegada[i].brand = getRandomMarca(); // gera uma marca aleatoria para a peca
+        listaDeChegadaSize = 10;
     }
     return listaChegada;
 }
