@@ -10,7 +10,7 @@ int menu_manager() {
     char option;
     Section section;
     Section* sectionsArray = inicializeSections(section);
-    Peca* listaChegada = iniciarListaChegada();
+    Peca* listaChegada = iniciarListaChegada( section,sectionsArray);
 
     do {
         std::cout << "***** Bem Vindo Gestor *****" << std::endl;
@@ -84,7 +84,7 @@ int main() {
     Section section;
     Section* sectionsArray = inicializeSections(section);
     printSection(section,sectionsArray);
-    Peca* listaChegada = iniciarListaChegada();
+    Peca* listaChegada = iniciarListaChegada( section, sectionsArray);
     printListaChegada(listaChegada);
     bool sair = false;
     char option0;

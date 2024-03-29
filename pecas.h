@@ -1,5 +1,9 @@
 #ifndef PROJETOEDA_PECAS_H
 #define PROJETOEDA_PECAS_H
+#include "sections.h"
+
+
+class Section; // sem isto o iniciarListaChegada da erro
 
 struct Peca {
     std::string brand;
@@ -9,7 +13,7 @@ struct Peca {
     int price;
 };
 
-Peca* iniciarListaChegada();
+Peca* iniciarListaChegada(Section& section, Section* sectionsArray);
 
 void printListaChegada(Peca* listaChegada);
 

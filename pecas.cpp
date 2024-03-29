@@ -5,14 +5,15 @@
 #include "pecas.h"
 #include "simulator.h" // para a listaDeChegadaSize
 
-Peca* iniciarListaChegada() {
+Peca* iniciarListaChegada(Section& section, Section* sectionsArray) {
     Peca* listaChegada = new Peca[50];
     srand(time(nullptr));
     for (int i = 0; i < 10; ++i) {
+        int indiceRandomCat = rand() % section.tamanho;
         listaChegada[i].sellprob = calculateRandomNumber(5,50);
         listaChegada[i].serialNumber = calculateRandomNumber(1000,9999);
         listaChegada[i].price = calculateRandomNumber(2, 180) * 5;
-        listaChegada[i].category = getRandomCategoria(); // gera uma categoria aleatoria para a peca
+        listaChegada[i].category = sectionsArray[indiceRandomCat].category; // gera uma categoria aleatoria para a peca
         listaChegada[i].brand = getRandomMarca(); // gera uma marca aleatoria para a peca
         listaDeChegadaSize = 10;
     }
