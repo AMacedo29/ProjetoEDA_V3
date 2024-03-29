@@ -14,4 +14,6 @@ add_executable(ProjetoEDA main.cpp
         sales.h
         simulator.cpp
         simulator.h
+        gestao.cpp
+        gestao.h
 )

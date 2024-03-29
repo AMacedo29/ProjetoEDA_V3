@@ -3,10 +3,14 @@
 #include "sections.h"
 #include "utils.h"
 #include "simulator.h"
+#include "gestao.h"
 
 int menu_manager() {
     bool sair = false;
     char option;
+    Section section;
+    Section* sectionsArray = inicializeSections(section);
+    Peca* listaChegada = iniciarListaChegada();
 
     do {
         std::cout << "***** Bem Vindo Gestor *****" << std::endl;
@@ -25,11 +29,12 @@ int menu_manager() {
         switch (option) {
             case '1':
                 std::cout << "Escolheu a opcao 1 - Venda Manual" << std::endl;
-                std::cout << "Digite o ID da seccao: " << std::endl;
+                SellManual(listaChegada, *sectionsArray); //Rever
+                /*std::cout << "Digite o ID da seccao: " << std::endl;
                 std::cout << "O ID da seccao que tentou inserir e invalido tente outro ID : " << std::endl;
                 std::cout << "Digite a marca do produto: " << std::endl;
                 std::cout << "A marca que tentou inserir e invalida tente outra marca: " << std::endl;
-                std::cout << "Venda efetuada com sucesso!" << std::endl;
+                std::cout << "Venda efetuada com sucesso!" << std::endl;*/
                 break;
             case '2':
                 std::cout << "Escolheu a opcao 2 - Promocao" << std::endl;

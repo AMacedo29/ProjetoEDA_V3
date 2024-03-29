@@ -1,0 +1,9 @@
+# ninja log v5
+1	488	7334435390912820	CMakeFiles/ProjetoEDA.dir/main.cpp.obj	13fbe0ccf186b864
+34	490	7334435390922856	CMakeFiles/ProjetoEDA.dir/sales.cpp.obj	d9f54be131f85660
+20	491	7334435390973029	CMakeFiles/ProjetoEDA.dir/pecas.cpp.obj	62e6242d8c5cb647
+29	492	7334435390988053	CMakeFiles/ProjetoEDA.dir/gestao.cpp.obj	63dede88a164105b
+24	493	7334435391028424	CMakeFiles/ProjetoEDA.dir/simulator.cpp.obj	17f3ab8a9c26f350
+16	497	7334435391070538	CMakeFiles/ProjetoEDA.dir/utils.cpp.obj	9f33df29425d587b
+12	501	7334435391121055	CMakeFiles/ProjetoEDA.dir/sections.cpp.obj	3f83f5f9c10ace38
+501	595	7334435392021043	ProjetoEDA.exe	e7099c9c73d6823c
