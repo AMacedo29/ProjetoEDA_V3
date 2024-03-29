@@ -24,25 +24,44 @@ int menu_manager() {
 
         switch (option) {
             case '1':
-                std::cout << "opcao 1 " << std::endl;
+                std::cout << "Escolheu a opcao 1 - Venda Manual" << std::endl;
+                std::cout << "Digite o ID da seccao: " << std::endl;
+                std::cout << "O ID da seccao que tentou inserir e invalido tente outro ID : " << std::endl;
+                std::cout << "Digite a marca do produto: " << std::endl;
+                std::cout << "A marca que tentou inserir e invalida tente outra marca: " << std::endl;
+                std::cout << "Venda efetuada com sucesso!" << std::endl;
                 break;
             case '2':
-                std::cout << "opcao 2 " << std::endl;
+                std::cout << "Escolheu a opcao 2 - Promocao" << std::endl;
+                std::cout << "Duracao da promoção (em dias): " << std::endl;
+                std::cout << "Percentagem de desconto: " << std::endl;
+                std::cout << "Digite o ID da seccao que ira ter o desconto: " << std::endl;
+                std::cout << "O ID da seccao que tentou inserir e invalido tente outro ID : " << std::endl;
                 break;
             case '3':
-                std::cout << "opcao 3 " << std::endl;
+                std::cout << "Escolheu a opcao 3 - Alterar categoria " << std::endl;
+                std::cout << "Digite o ID da seccao que deseja mudar: " << std::endl;
+                std::cout << "O ID da seccao que tentou inserir e invalido tente outro ID : " << std::endl;
+                std::cout << "Digite a nova categoria para a seccao: " << std::endl;
+                std::cout << "Categoria invalida. Digite outra caregoria: " << std::endl;
                 break;
             case '4':
-                std::cout << "opcao 4 " << std::endl;
+                std::cout << "Escolheu a opcao 4 - Adicionar seccao  " << std::endl;
+                std::cout << "Digite o ID da seccao:" << std::endl;
+                std::cout << "O ID da seccao que tentou inserir ja existe tente outro ID : " << std::endl;
+                std::cout << "Escolha a capacidade maxima da seccao (min:3 | max:6): " << std::endl;
+                std::cout << "Capacidade invalida escolha entre estes valores (min:3 | max:6): " << std::endl;
+                std::cout << "Escolha a categoria para a seccao" << std::endl;
+                std::cout << "Categoria invalida. Digite outra caregoria: " << std::endl;
                 break;
             case '5':
-                std::cout << "opcao 5 " << std::endl;
+                std::cout << "Escolheu a opcao 5 - Gravar Armazem " << std::endl;
                 break;
             case '6':
-                std::cout << "opcao 6 " << std::endl;
+                std::cout << "Escolheu a opcao 6 - Carregar Armazem " << std::endl;
                 break;
             case '7':
-                std::cout << "opcao 7 " << std::endl;
+                std::cout << "Escolheu a opcao 7 - Imprimir Armazem " << std::endl;
                 break;
             case '0':
                 std::cout << "Escolheu a opcao Sair. Adeus!" << std::endl;
