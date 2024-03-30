@@ -7,6 +7,8 @@
 
 #include "sections.h"
 
-void SellManual(Peca* listaChegada, Section& section);
+void SellManual(Peca* listaChegada, Section& section, int nlistaChegada);
+
+void addSection(Section& section);
 
 #endif //PROJETOEDA_GESTAO_H

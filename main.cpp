@@ -1,16 +1,17 @@
 #include <iostream>
+#include <limits>
 #include "pecas.h"
 #include "sections.h"
 #include "utils.h"
 #include "simulator.h"
 #include "gestao.h"
 
-int menu_manager() {
+void menu_manager(Section* sectionsArray, Peca* listaChegada) {
     bool sair = false;
     char option;
     Section section;
-    Section* sectionsArray = inicializeSections(section);
-    Peca* listaChegada = iniciarListaChegada( section,sectionsArray);
+
+
 
     do {
         std::cout << "***** Bem Vindo Gestor *****" << std::endl;
@@ -29,7 +30,7 @@ int menu_manager() {
         switch (option) {
             case '1':
                 std::cout << "Escolheu a opcao 1 - Venda Manual" << std::endl;
-                SellManual(listaChegada, *sectionsArray); //Rever
+                //SellManual(listaChegada, *sectionsArray, 50); //Rever
                 /*std::cout << "Digite o ID da seccao: " << std::endl;
                 std::cout << "O ID da seccao que tentou inserir e invalido tente outro ID : " << std::endl;
                 std::cout << "Digite a marca do produto: " << std::endl;
@@ -51,13 +52,14 @@ int menu_manager() {
                 std::cout << "Categoria invalida. Digite outra caregoria: " << std::endl;
                 break;
             case '4':
+                /*
                 std::cout << "Escolheu a opcao 4 - Adicionar seccao  " << std::endl;
                 std::cout << "Digite o ID da seccao:" << std::endl;
                 std::cout << "O ID da seccao que tentou inserir ja existe tente outro ID : " << std::endl;
                 std::cout << "Escolha a capacidade maxima da seccao (min:3 | max:6): " << std::endl;
                 std::cout << "Capacidade invalida escolha entre estes valores (min:3 | max:6): " << std::endl;
                 std::cout << "Escolha a categoria para a seccao" << std::endl;
-                std::cout << "Categoria invalida. Digite outra caregoria: " << std::endl;
+                 */
                 break;
             case '5':
                 std::cout << "Escolheu a opcao 5 - Gravar Armazem " << std::endl;
@@ -77,7 +79,7 @@ int menu_manager() {
 
         }
     }while (!sair);
-    return 0;
+
 }
 
 int main() {
@@ -96,6 +98,9 @@ int main() {
         std::cout << "Dia (s)eguinte *********** (g)estao" << std::endl;
         std::cout << "Seleccione a sua opcao:" << std::endl;
         std::cin >> option0;
+        // Limpa o buffer de entrada
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+
         switch(option0){
             case 's':
                 std::cout << "Dia: "  << dia << std::endl;
@@ -105,7 +110,7 @@ int main() {
                 std::cout << listaDeChegadaSize << std::endl;
                 break;
             case 'g':
-                menu_manager();
+                menu_manager(sectionsArray, listaChegada);
                 break;
             case '0':
                 std::cout << "Escolheu a opcao Sair. Adeus!" << std::endl;
