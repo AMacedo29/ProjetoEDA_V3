@@ -6,19 +6,26 @@
 //
 //
 // Ponto 3.1 - Venda Manual
-void SellManual(Peca* listaChegada, Section& section, int nlistaChegada){
+
+void SellManual(Peca* listaChegada, Section* sectionarray, Section& section){
     char sectionIDsell;
     std::string brandsell;
     bool flagsection = false;
     bool flagbrand = false;
+
+
     std::cout << "Escolheu a opcao 1 - Venda Manual" << std::endl;
+
+
+
     //Inserção de id da secção e validação do mesmo
     //ALTERAR
+    /*
     do {
         std::cout << "Digite o ID da seccao: " << std::endl;
         std::cin >> sectionIDsell;
-        for (int i = 0; i < section.tamanho; ++i) {
-            if (sectionIDsell == section.id) {
+        for (int i = 0; i < sectionarray->tamanho; ++i) {
+            if (sectionIDsell == sectionarray[i].id) {
                 flagsection = true;
                 break;
             }
@@ -26,20 +33,29 @@ void SellManual(Peca* listaChegada, Section& section, int nlistaChegada){
         if (!flagsection) {
             std::cout << "ID da seccao invalida. Tente novamente." << std::endl;
         }
-    }while(!flagsection);
-    do {
-        std::cout << "Digite o ID da seccao: " << std::endl;
+    }while(!flagsection);*/
+   // do {
+        std::cout << "Digite a marca do produto: " << std::endl;
         std::cin >> brandsell;
-        for (int i = 0; i < nlistaChegada; ++i) {
-            if (brandsell == listaChegada->brand) {
-                flagbrand = true;
-                break;
-            }
+
+    for (int i = 0; i < 50; ++i) {
+            //if (brandsell == listaChegada[i].brand) {
+
+               if(listaChegada[i].brand == brandsell){
+                   std::cout << "Foi encontrado";
+               }
+
+
+            //}
         }
-        if (!flagbrand) {
-            std::cout << "ID da seccao invalida. Tente novamente." << std::endl;
+        // ma pratica
+    for (int i = 0; i < section.tamanho;++i){
+            std::cout << sectionarray[i].id;
+
+            std::cout << std::endl;
         }
-    }while(!flagbrand);
+
+    //}while(0);
 
 
 

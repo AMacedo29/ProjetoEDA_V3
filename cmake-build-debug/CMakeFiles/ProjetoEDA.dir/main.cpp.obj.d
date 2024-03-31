@@ -143,6 +143,7 @@ CMakeFiles/ProjetoEDA.dir/main.cpp.obj: \
  C:/Program\ Files/JetBrains/CLion\ 2023.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/istream \
  C:/Program\ Files/JetBrains/CLion\ 2023.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/istream.tcc \
  C:/Program\ Files/JetBrains/CLion\ 2023.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/limits \
+ C:/Program\ Files/JetBrains/CLion\ 2023.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/ctime \
  C:\Users\KAMAXO\Documents\GitHub\TrabalhoEDA\ProjetoEDA_V3\pecas.h \
  C:\Users\KAMAXO\Documents\GitHub\TrabalhoEDA\ProjetoEDA_V3\sections.h \
  C:\Users\KAMAXO\Documents\GitHub\TrabalhoEDA\ProjetoEDA_V3\utils.h \

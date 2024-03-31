@@ -11,6 +11,7 @@ struct Section{
     int serialNumberReg;
     int *listaPecas;
     int tamanho;
+
 };
 
 
