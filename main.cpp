@@ -42,11 +42,13 @@ void menu_manager(Section* sectionsArray, Peca* listaChegada, Section& section) 
                 std::cout << "O ID da seccao que tentou inserir e invalido tente outro ID : " << std::endl;
                 break;
             case '3':
+                mudaCategoria(sectionsArray, section);
+                /*
                 std::cout << "Escolheu a opcao 3 - Alterar categoria " << std::endl;
                 std::cout << "Digite o ID da seccao que deseja mudar: " << std::endl;
                 std::cout << "O ID da seccao que tentou inserir e invalido tente outro ID : " << std::endl;
                 std::cout << "Digite a nova categoria para a seccao: " << std::endl;
-                std::cout << "Categoria invalida. Digite outra caregoria: " << std::endl;
+                std::cout << "Categoria invalida. Digite outra caregoria: " << std::endl;*/
                 break;
             case '4':
                 /*

@@ -15,11 +15,22 @@ bool validateSectionID(char id, Section* sectionarray, int tamanho) {
     }
     return false;
 }
+
 bool validateProductBrand(std::string marca, Peca* listaChegada, int tamanho) {
     for (int i = 0; i < tamanho; ++i) {
         if (marca == listaChegada[i].brand) {
             return true;
         }
+    }
+    return false;
+}
+
+bool validateCategory(std::string categoria, Section* sectionarray, int tamanho){
+    for (int i = 0; i < tamanho; ++i) {
+        if(categoria == sectionarray[i].category){
+            return true;
+        }
+
     }
     return false;
 }
@@ -55,4 +66,29 @@ void SellManual(Peca* listaChegada, Section* sectionarray, Section& section){
 }
 
 
-void addSection();
+void mudaCategoria(Section* sectionarray, Section& section){
+    std::string mudacategoria;
+    char sectionchange;
+    do {
+        std::cout << "Digite a seccao" << std::endl;
+        std::cin >> sectionchange;
+        if(!validateSectionID(sectionchange, sectionarray, section.tamanho)){
+            std::cout << "Seccao invalida. Tente novamente." << std::endl;
+        } else {
+            std::cout << "Foi encontrado Categoria!" << std::endl;
+            break;
+        }
+    } while(true);
+
+    do {
+        std::cout << "Digite a categoria que deseja alterar" << std::endl;
+        std::cin >> mudacategoria;
+        if(!validateCategory(mudacategoria, sectionarray, section.tamanho)){
+            std::cout << "Categoria invalida. Tente novamente." << std::endl;
+        } else {
+            std::cout << "Foi encontrado categoria!" << std::endl;
+            break;
+        }
+    } while(true);
+
+}
