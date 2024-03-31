@@ -79,10 +79,7 @@ void removerPecasAdicionadasListaChegada(Peca* listaChegada, Section& section) {
     for (int i = 0; i < listaDeChegadaSize; ++i) {
         bool encontrouPecaAdicionada = false;
         for (int j = 0; j < 8; ++j) {
-            if (listaChegada[i].category == section.listaPecas[j].category &&
-                listaChegada[i].brand == section.listaPecas[j].brand &&
-                listaChegada[i].serialNumber == section.listaPecas[j].serialNumber &&
-                listaChegada[i].price == section.listaPecas[j].price) {
+            if (listaChegada[i].serialNumber == section.listaPecas[j].serialNumber){
                 encontrouPecaAdicionada = true;
                 break;
             }
