@@ -6,42 +6,53 @@
 //
 //
 // Ponto 3.1 - Venda Manual
-void  SellManual(Peca* listaChegada, Section* sectionarray, Section& section){
+// Funções Funcionais
+bool validateSectionID(char id, Section* sectionarray, int tamanho) {
+    for (int i = 0; i < tamanho; ++i) {
+        if (id == sectionarray[i].id) {
+            return true;
+        }
+    }
+    return false;
+}
+bool validateProductBrand(std::string marca, Peca* listaChegada, int tamanho) {
+    for (int i = 0; i < tamanho; ++i) {
+        if (marca == listaChegada[i].brand) {
+            return true;
+        }
+    }
+    return false;
+}
+
+void SellManual(Peca* listaChegada, Section* sectionarray, Section& section){
     char sectionIDsell;
     std::string brandsell;
-    bool flagsection = false;
+
     std::cout << "Escolheu a opcao 1 - Venda Manual" << std::endl;
+    // Loop para validar o ID da seção
     do {
         std::cout << "Digite o ID da seccao: " << std::endl;
         std::cin >> sectionIDsell;
-        for (int i = 0; i < section.tamanho; ++i) {
-            if (sectionIDsell == sectionarray[i].id) {
-                flagsection = true;
-            }
-        }
-        if (!flagsection) { // flagbrand == false
+        if (!validateSectionID(sectionIDsell, sectionarray, section.tamanho)) {
             std::cout << "ID da seccao invalida. Tente novamente." << std::endl;
-        }else{
+        } else {
             std::cout << "Foi encontrado seccao!" << std::endl;
             break;
         }
     } while (true);
-    bool flagbrand = false;
+
+    // Loop para validar a marca do produto
     do {
         std::cout << "Digite a marca do produto: " << std::endl;
         std::cin >> brandsell;
-        for (int i = 0; i < 50; ++i) {
-            if (listaChegada[i].brand == brandsell) {
-                flagbrand = true;
-                break;
-            }
-        }
-        if (!flagbrand) {
+        if (!validateProductBrand(brandsell, listaChegada, 50)) {
             std::cout << "Marca de Produto invalida. Tente novamente." << std::endl;
         } else {
             std::cout << "Foi encontrado a marca!" << std::endl;
             break;
         }
-    } while (true); // Alterado para verificar !flagbrand
+    } while (true);
 }
+
+
 void addSection();
