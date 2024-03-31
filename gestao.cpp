@@ -34,7 +34,7 @@ bool validateCategory(std::string categoria, Section* sectionarray, int tamanho)
     }
     return false;
 }
-
+//Incompleto
 void SellManual(Peca* listaChegada, Section* sectionarray, Section& section){
     char sectionIDsell;
     std::string brandsell;
@@ -44,7 +44,7 @@ void SellManual(Peca* listaChegada, Section* sectionarray, Section& section){
     do {
         std::cout << "Digite o ID da seccao: " << std::endl;
         std::cin >> sectionIDsell;
-        if (!validateSectionID(sectionIDsell, sectionarray, section.tamanho)) {
+        if (!validateSectionID(sectionIDsell, sectionarray, section.tamanho)) { //validateSectionID(sectionIDsell, sectionarray, section.tamanho) == false
             std::cout << "ID da seccao invalida. Tente novamente." << std::endl;
         } else {
             std::cout << "Foi encontrado seccao!" << std::endl;
@@ -64,7 +64,7 @@ void SellManual(Peca* listaChegada, Section* sectionarray, Section& section){
         }
     } while (true);
 }
-
+//Incompleto
 void mudaCategoria(Section* sectionarray, Section& section){
     std::string mudacategoria;
     char sectionchange;
@@ -87,4 +87,33 @@ void mudaCategoria(Section* sectionarray, Section& section){
                 break;
             }
         }
+}
+
+void addSection(Section* sectionarray, Section& section){
+    char sectionID;
+    int sectionCapacity;
+    std::string sectionCategory;
+
+    do {
+        std::cout << "Digite o ID da seccao: " << std::endl;
+        std::cin >> sectionID;
+        if (!validateSectionID(sectionID, sectionarray, section.tamanho)) { //validateSectionID(sectionIDsell, sectionarray, section.tamanho) == false
+            std::cout << "ID da seccao invalida. Tente novamente." << std::endl;
+        } else {
+            std::cout << "Foi encontrado seccao!" << std::endl;
+            break;
+        }
+    } while (true);
+
+    do {
+        std::cout << "Digite a capacidade da seccao (valores entre 3 e 6): " << std::endl;
+        std::cin >> sectionCapacity;
+        if (sectionCapacity >= 3 && sectionCapacity <= 6 ) { //validateSectionID(sectionIDsell, sectionarray, section.tamanho) == false
+            std::cout << "Capacidade Valida" << std::endl;
+            break;
+        } else {
+            std::cout << "Capacidade invalida. Tente novamente." << std::endl;
+        }
+    } while (!(sectionCapacity >= 3 && sectionCapacity <= 6 ));
+
 }
