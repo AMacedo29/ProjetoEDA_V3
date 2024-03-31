@@ -28,7 +28,7 @@ void adicionarPeca(Peca* listaChegada, int& NextDayPecas, Section& section, Sect
             listaDeChegadaSize++;
         }
     }
-    //removerPecasAdicionadasListaChegada(listaChegada,section);//arranjar
+    removerPecasAdicionadasListaChegada(listaChegada,section);//arranjar
 }
 
 void mostrarPecas(Peca* listaChegada, int NextDayPecas, int dia) {
@@ -75,8 +75,7 @@ void printNewSection(Section& section, Section* sectionsArray){
     }
 }
 
-void removerPecasAdicionadasListaChegada(Peca* listaChegada, Section& section) { // não está certo
-    int novoTamanho = 0;
+void removerPecasAdicionadasListaChegada(Peca* listaChegada, Section& section) {//arranjar
     for (int i = 0; i < listaDeChegadaSize; ++i) {
         bool encontrouPecaAdicionada = false;
         for (int j = 0; j < 8; ++j) {
@@ -88,9 +87,12 @@ void removerPecasAdicionadasListaChegada(Peca* listaChegada, Section& section) {
                 break;
             }
         }
-        if (!encontrouPecaAdicionada) {
-            listaChegada[novoTamanho++] = listaChegada[i];
+        if (encontrouPecaAdicionada) {
+            for (int k = i; k < listaDeChegadaSize - 1; ++k) {
+                listaChegada[k] = listaChegada[k + 1];
+            }
+            listaDeChegadaSize--;
+            i--;
         }
     }
-    listaDeChegadaSize = novoTamanho;
 }
