@@ -146,4 +146,5 @@ CMakeFiles/ProjetoEDA.dir/simulator.cpp.obj: \
  C:\Users\KAMAXO\Documents\GitHub\TrabalhoEDA\ProjetoEDA_V3\sections.h \
  C:\Users\KAMAXO\Documents\GitHub\TrabalhoEDA\ProjetoEDA_V3\pecas.h \
  C:\Users\KAMAXO\Documents\GitHub\TrabalhoEDA\ProjetoEDA_V3\utils.h \
- C:/Program\ Files/JetBrains/CLion\ 2023.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/ctime
+ C:/Program\ Files/JetBrains/CLion\ 2023.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/ctime \
+ C:\Users\KAMAXO\Documents\GitHub\TrabalhoEDA\ProjetoEDA_V3\sales.h

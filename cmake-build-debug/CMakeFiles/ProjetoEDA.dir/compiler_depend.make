@@ -313,12 +313,16 @@ CMakeFiles/ProjetoEDA.dir/pecas.cpp.obj: C:/Users/KAMAXO/Documents/GitHub/Trabal
   C:/Program\ Files/JetBrains/CLion\ 2023.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/cpp_type_traits.h \
   C:/Program\ Files/JetBrains/CLion\ 2023.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/cxxabi_forced.h \
   C:/Program\ Files/JetBrains/CLion\ 2023.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/cxxabi_init_exception.h \
+  C:/Program\ Files/JetBrains/CLion\ 2023.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/enable_special_members.h \
+  C:/Program\ Files/JetBrains/CLion\ 2023.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/erase_if.h \
   C:/Program\ Files/JetBrains/CLion\ 2023.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/exception.h \
   C:/Program\ Files/JetBrains/CLion\ 2023.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/exception_defines.h \
   C:/Program\ Files/JetBrains/CLion\ 2023.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/exception_ptr.h \
   C:/Program\ Files/JetBrains/CLion\ 2023.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/functexcept.h \
   C:/Program\ Files/JetBrains/CLion\ 2023.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/functional_hash.h \
   C:/Program\ Files/JetBrains/CLion\ 2023.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/hash_bytes.h \
+  C:/Program\ Files/JetBrains/CLion\ 2023.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/hashtable.h \
+  C:/Program\ Files/JetBrains/CLion\ 2023.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/hashtable_policy.h \
   C:/Program\ Files/JetBrains/CLion\ 2023.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/invoke.h \
   C:/Program\ Files/JetBrains/CLion\ 2023.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/ios_base.h \
   C:/Program\ Files/JetBrains/CLion\ 2023.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/istream.tcc \
@@ -332,6 +336,7 @@ CMakeFiles/ProjetoEDA.dir/pecas.cpp.obj: C:/Users/KAMAXO/Documents/GitHub/Trabal
   C:/Program\ Files/JetBrains/CLion\ 2023.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/move.h \
   C:/Program\ Files/JetBrains/CLion\ 2023.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/nested_exception.h \
   C:/Program\ Files/JetBrains/CLion\ 2023.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/new_allocator.h \
+  C:/Program\ Files/JetBrains/CLion\ 2023.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/node_handle.h \
   C:/Program\ Files/JetBrains/CLion\ 2023.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/ostream.tcc \
   C:/Program\ Files/JetBrains/CLion\ 2023.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/ostream_insert.h \
   C:/Program\ Files/JetBrains/CLion\ 2023.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/postypes.h \
@@ -352,6 +357,7 @@ CMakeFiles/ProjetoEDA.dir/pecas.cpp.obj: C:/Users/KAMAXO/Documents/GitHub/Trabal
   C:/Program\ Files/JetBrains/CLion\ 2023.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/streambuf_iterator.h \
   C:/Program\ Files/JetBrains/CLion\ 2023.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/string_view.tcc \
   C:/Program\ Files/JetBrains/CLion\ 2023.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stringfwd.h \
+  C:/Program\ Files/JetBrains/CLion\ 2023.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/unordered_set.h \
   C:/Program\ Files/JetBrains/CLion\ 2023.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/uses_allocator.h \
   C:/Program\ Files/JetBrains/CLion\ 2023.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/uses_allocator_args.h \
   C:/Program\ Files/JetBrains/CLion\ 2023.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/utility.h \
@@ -367,6 +373,7 @@ CMakeFiles/ProjetoEDA.dir/pecas.cpp.obj: C:/Users/KAMAXO/Documents/GitHub/Trabal
   C:/Program\ Files/JetBrains/CLion\ 2023.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/debug/assertions.h \
   C:/Program\ Files/JetBrains/CLion\ 2023.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/debug/debug.h \
   C:/Program\ Files/JetBrains/CLion\ 2023.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/exception \
+  C:/Program\ Files/JetBrains/CLion\ 2023.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/ext/aligned_buffer.h \
   C:/Program\ Files/JetBrains/CLion\ 2023.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/ext/alloc_traits.h \
   C:/Program\ Files/JetBrains/CLion\ 2023.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/ext/atomicity.h \
   C:/Program\ Files/JetBrains/CLion\ 2023.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/ext/numeric_traits.h \
@@ -389,6 +396,7 @@ CMakeFiles/ProjetoEDA.dir/pecas.cpp.obj: C:/Users/KAMAXO/Documents/GitHub/Trabal
   C:/Program\ Files/JetBrains/CLion\ 2023.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/tuple \
   C:/Program\ Files/JetBrains/CLion\ 2023.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/type_traits \
   C:/Program\ Files/JetBrains/CLion\ 2023.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/typeinfo \
+  C:/Program\ Files/JetBrains/CLion\ 2023.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/unordered_set \
   C:/Program\ Files/JetBrains/CLion\ 2023.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/atomic_word.h \
   C:/Program\ Files/JetBrains/CLion\ 2023.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/c++allocator.h \
   C:/Program\ Files/JetBrains/CLion\ 2023.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/c++config.h \
@@ -897,6 +905,7 @@ CMakeFiles/ProjetoEDA.dir/simulator.cpp.obj: C:/Users/KAMAXO/Documents/GitHub/Tr
   C:/Program\ Files/JetBrains/CLion\ 2023.3/bin/mingw/x86_64-w64-mingw32/include/wchar.h \
   C:/Program\ Files/JetBrains/CLion\ 2023.3/bin/mingw/x86_64-w64-mingw32/include/wctype.h \
   C:/Users/KAMAXO/Documents/GitHub/TrabalhoEDA/ProjetoEDA_V3/pecas.h \
+  C:/Users/KAMAXO/Documents/GitHub/TrabalhoEDA/ProjetoEDA_V3/sales.h \
   C:/Users/KAMAXO/Documents/GitHub/TrabalhoEDA/ProjetoEDA_V3/sections.h \
   C:/Users/KAMAXO/Documents/GitHub/TrabalhoEDA/ProjetoEDA_V3/simulator.h \
   C:/Users/KAMAXO/Documents/GitHub/TrabalhoEDA/ProjetoEDA_V3/utils.h
@@ -1366,10 +1375,6 @@ C:/Users/KAMAXO/Documents/GitHub/TrabalhoEDA/ProjetoEDA_V3/utils.h:
 
 C:/Users/KAMAXO/Documents/GitHub/TrabalhoEDA/ProjetoEDA_V3/pecas.cpp:
 
-C:/Users/KAMAXO/Documents/GitHub/TrabalhoEDA/ProjetoEDA_V3/sales.cpp:
-
-C:/Users/KAMAXO/Documents/GitHub/TrabalhoEDA/ProjetoEDA_V3/sales.h:
-
 C:/Program\ Files/JetBrains/CLion\ 2023.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/erase_if.h:
 
 C:/Program\ Files/JetBrains/CLion\ 2023.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/hashtable.h:
@@ -1379,6 +1384,10 @@ C:/Program\ Files/JetBrains/CLion\ 2023.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/1
 C:/Program\ Files/JetBrains/CLion\ 2023.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/ext/aligned_buffer.h:
 
 C:/Program\ Files/JetBrains/CLion\ 2023.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/unordered_set:
+
+C:/Users/KAMAXO/Documents/GitHub/TrabalhoEDA/ProjetoEDA_V3/sales.cpp:
+
+C:/Users/KAMAXO/Documents/GitHub/TrabalhoEDA/ProjetoEDA_V3/sales.h:
 
 C:/Users/KAMAXO/Documents/GitHub/TrabalhoEDA/ProjetoEDA_V3/simulator.cpp:
 
