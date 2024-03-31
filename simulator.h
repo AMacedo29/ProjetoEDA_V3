@@ -9,8 +9,10 @@ void mostrarPecas(Peca* listaChegada, int NextDayPecas, int dia);
 
 extern int listaDeChegadaSize; // tive q usar extern pq a variavel está declarada no simulador.cpp
 
-void addPecaToSection(Peca* listaChegada, Section* sectionsArray, Section& section);
+Peca* listaEsperaPeca(Peca* listaChegada, Section& section, Section* sectionsArray, int totalCapacity);
 
-void inserirPecasArmazem(Peca* listaChegada, Section* sectionsArray, Section& section);
+void printNewSection(Section& section, Section* sectionsArray);
+
+void removerPecasAdicionadasListaChegada(Peca* listaChegada, Section& section);
 
 #endif //PROJETOEDA_SIMULATOR_H

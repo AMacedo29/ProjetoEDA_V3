@@ -2,6 +2,8 @@
 #define PROJETOEDA_SECTIONS_H
 #include "pecas.h"
 
+class Peca;
+
 struct Section{
     char id;
     int capacity;
@@ -9,7 +11,7 @@ struct Section{
     int quantity;
     int totalIncome;
     int serialNumberReg;
-    int *listaPecas;
+    Peca *listaPecas;
     int tamanho;
 
 };
@@ -18,6 +20,8 @@ struct Section{
 Section* inicializeSections(Section& section);
 
 void printSection(Section& section, Section* sectionsArray);
+
+int sectionsCapacity(Section& section, Section* sectionsArray);
 
 
 #endif //PROJETOEDA_SECTIONS_H

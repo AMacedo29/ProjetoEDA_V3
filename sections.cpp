@@ -34,4 +34,11 @@ void printSection(Section& section, Section* sectionsArray){
     }
 }
 
+int sectionsCapacity(Section& section, Section* sectionsArray){
+    int totalCapacity = 0;
+    for (int i = 0; i < section.tamanho; i++){
+        totalCapacity += sectionsArray[i].capacity;
+    }
+    return totalCapacity;
+}
 

@@ -4,6 +4,7 @@
 #include <cstdlib> // For the rand() function
 #include <ctime>   // For the time() function
 #include "pecas.h"
+#include "sales.h"
 #include "sections.h"
 
 
@@ -27,6 +28,7 @@ void adicionarPeca(Peca* listaChegada, int& NextDayPecas, Section& section, Sect
             listaDeChegadaSize++;
         }
     }
+    //removerPecasAdicionadasListaChegada(listaChegada,section);//arranjar
 }
 
 void mostrarPecas(Peca* listaChegada, int NextDayPecas, int dia) {
@@ -41,28 +43,54 @@ void mostrarPecas(Peca* listaChegada, int NextDayPecas, int dia) {
     }
 }
 
-void inserirPecasArmazem(Peca* listaChegada, Section* sectionsArray, Section& section){ //ainda não está certo
-    addPecaToSection(listaChegada, sectionsArray, section);
-
-    for (int i = 0; i < section.tamanho; ++i) {
-        for (int j = 0; j < 8; ++j) {
-            if (sectionsArray[i].category == listaChegada[j].category) {
-                listaChegada[j] = listaChegada[listaDeChegadaSize - 1];
-                --listaDeChegadaSize;
+Peca* listaEsperaPeca(Peca* listaChegada, Section& section, Section* sectionsArray, int totalCapacity) {
+    section.listaPecas = new Peca[totalCapacity];
+    int pecasAdicionadas = 0;
+    for (int i = 0; i < totalCapacity && pecasAdicionadas < 8; ++i) {
+        for (int j = 0; j < section.tamanho; ++j) {
+            if (sectionsArray[j].category == listaChegada[i].category) {
+                section.listaPecas[pecasAdicionadas++] = listaChegada[i];
                 break;
             }
         }
     }
-    //talvez usar a listaPecas do section para retornar um array com isto e so depois iterar
-
+    return section.listaPecas;
 }
 
-void addPecaToSection(Peca* listaChegada, Section* sectionsArray, Section& section){//ainda não está certo
-    for (int i = 0; i < section.tamanho; i++){
-        for (int j = 0; j < 8; j++)
-            if (sectionsArray[i].category == listaChegada[j].category){
-                std::cout << "      " << listaChegada[j].category << "  |  " <<  listaChegada[j].brand
-                          << "  |  " <<  listaChegada[j].serialNumber<< "  |  "  <<  listaChegada[j].price << " $" <<std::endl;
+
+void printNewSection(Section& section, Section* sectionsArray){
+    std::cout << "          *********************************************" << std::endl;
+    std::cout << "          *** Armazem EDA  |  Total Faturacao " << getTotalSales() << " $" << " ***" << std::endl;
+    std::cout << "          *********************************************" << std::endl;
+    for (int i = 0; i < section.tamanho; i++) {
+        std::cout << " Seccao " << sectionsArray[i].id << "  | " << " Categoria: " << sectionsArray[i].category
+                  << "  | " << " Capacidade: " << sectionsArray[i].capacity << "  | " << " Quantidade: " << sectionsArray[i].quantity << "  | "
+                  << " Faturacao: " << "0" << std::endl;
+        for (int j = 0; j < 8; j++) {
+            if (section.listaPecas[j].category == sectionsArray[i].category) {
+                std::cout << "      " << section.listaPecas[j].category << "  |  " <<  section.listaPecas[j].brand
+                          << "  |  " <<  section.listaPecas[j].serialNumber<< "  |  "  <<  section.listaPecas[j].price << " $" <<std::endl;
             }
+        }
     }
+}
+
+void removerPecasAdicionadasListaChegada(Peca* listaChegada, Section& section) { // não está certo
+    int novoTamanho = 0;
+    for (int i = 0; i < listaDeChegadaSize; ++i) {
+        bool encontrouPecaAdicionada = false;
+        for (int j = 0; j < 8; ++j) {
+            if (listaChegada[i].category == section.listaPecas[j].category &&
+                listaChegada[i].brand == section.listaPecas[j].brand &&
+                listaChegada[i].serialNumber == section.listaPecas[j].serialNumber &&
+                listaChegada[i].price == section.listaPecas[j].price) {
+                encontrouPecaAdicionada = true;
+                break;
+            }
+        }
+        if (!encontrouPecaAdicionada) {
+            listaChegada[novoTamanho++] = listaChegada[i];
+        }
+    }
+    listaDeChegadaSize = novoTamanho;
 }
