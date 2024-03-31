@@ -40,3 +40,29 @@ void mostrarPecas(Peca* listaChegada, int NextDayPecas, int dia) {
                   << listaChegada[i].price << " $" << std::endl;
     }
 }
+
+void inserirPecasArmazem(Peca* listaChegada, Section* sectionsArray, Section& section){ //ainda não está certo
+    addPecaToSection(listaChegada, sectionsArray, section);
+
+    for (int i = 0; i < section.tamanho; ++i) {
+        for (int j = 0; j < 8; ++j) {
+            if (sectionsArray[i].category == listaChegada[j].category) {
+                listaChegada[j] = listaChegada[listaDeChegadaSize - 1];
+                --listaDeChegadaSize;
+                break;
+            }
+        }
+    }
+    //talvez usar a listaPecas do section para retornar um array com isto e so depois iterar
+
+}
+
+void addPecaToSection(Peca* listaChegada, Section* sectionsArray, Section& section){//ainda não está certo
+    for (int i = 0; i < section.tamanho; i++){
+        for (int j = 0; j < 8; j++)
+            if (sectionsArray[i].category == listaChegada[j].category){
+                std::cout << "      " << listaChegada[j].category << "  |  " <<  listaChegada[j].brand
+                          << "  |  " <<  listaChegada[j].serialNumber<< "  |  "  <<  listaChegada[j].price << " $" <<std::endl;
+            }
+    }
+}

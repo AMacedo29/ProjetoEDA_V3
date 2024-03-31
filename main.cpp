@@ -1,5 +1,6 @@
 #include <iostream>
 #include <limits>
+#include <ctime>
 #include "pecas.h"
 #include "sections.h"
 #include "utils.h"
@@ -87,6 +88,7 @@ int main() {
     Section* sectionsArray = inicializeSections(section);
     printSection(section,sectionsArray);
     Peca* listaChegada = iniciarListaChegada( section, sectionsArray);
+    ordenarListaPorMarca(listaChegada);
     printListaChegada(listaChegada);
     bool sair = false;
     char option0;
@@ -106,6 +108,9 @@ int main() {
                 std::cout << "Dia: "  << dia << std::endl;
                 dia++;
                 adicionarPeca(listaChegada, NextDayPecas, section, sectionsArray);
+                ordenarListaPorMarca(listaChegada);
+                printSection(section,sectionsArray);
+                inserirPecasArmazem(listaChegada,sectionsArray, section);
                 mostrarPecas(listaChegada, NextDayPecas, dia);
                 std::cout << listaDeChegadaSize << std::endl;
                 break;

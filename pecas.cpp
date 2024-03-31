@@ -15,8 +15,8 @@ Peca* iniciarListaChegada(Section& section, Section* sectionsArray) {
         listaChegada[i].price = calculateRandomNumber(2, 180) * 5;
         listaChegada[i].category = sectionsArray[indiceRandomCat].category; // gera uma categoria aleatoria para a peca
         listaChegada[i].brand = getRandomMarca(); // gera uma marca aleatoria para a peca
-        listaDeChegadaSize = 10;
     }
+    listaDeChegadaSize = 10;
     return listaChegada;
 }
 
@@ -30,3 +30,14 @@ void printListaChegada(Peca* listaChegada){
     }
 }
 
+void ordenarListaPorMarca(Peca* listaChegada) {
+    for (int i = 0; i < listaDeChegadaSize - 1; ++i) {
+        for (int j = 0; j < listaDeChegadaSize - i - 1; ++j) {
+            if (listaChegada[j].brand > listaChegada[j + 1].brand) {
+                Peca temp = listaChegada[j];
+                listaChegada[j] = listaChegada[j + 1];
+                listaChegada[j + 1] = temp;
+            }
+        }
+    }
+}

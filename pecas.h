@@ -17,5 +17,7 @@ Peca* iniciarListaChegada(Section& section, Section* sectionsArray);
 
 void printListaChegada(Peca* listaChegada);
 
+void ordenarListaPorMarca(Peca* listaChegada);
+
 
 #endif //PROJETOEDA_PECAS_H

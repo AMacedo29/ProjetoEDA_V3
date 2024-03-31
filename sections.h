@@ -13,10 +13,10 @@ struct Section{
     int tamanho;
 };
 
+
 Section* inicializeSections(Section& section);
 
 void printSection(Section& section, Section* sectionsArray);
 
-//void addPecaToSection(Peca* listaChegada, Section* sectionsArray, Section& section);
 
 #endif //PROJETOEDA_SECTIONS_H

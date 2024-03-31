@@ -33,6 +33,7 @@ std::string getRandomMarca() {
     return linha; // Retorna a marca aleatória
 }
 
+
 std::string getRandomCategoria() {
     std::ifstream myFile("categorias.txt"); // Abre o arquivo "categorias.txt"
     std::string linha; // Variável temporária para armazenar cada linha do arquivo
@@ -55,3 +56,4 @@ std::string getRandomCategoria() {
 
     return linha; // Retorna a categoria aleatória
 }
+

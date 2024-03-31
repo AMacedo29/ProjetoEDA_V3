@@ -4,30 +4,24 @@
 #include "utils.h"
 #include "pecas.h"
 #include "simulator.h"
+#include <unordered_set>
 
 Section* inicializeSections(Section& section){
     srand(time(nullptr));
     section.tamanho = calculateRandomNumber(7, 10);
+    std::unordered_set<std::string> categoriasUsadas;
     Section* sectionsArray = new Section[section.tamanho];
     for (int i = 0; i < section.tamanho ; ++i) {
         sectionsArray[i].id = static_cast<char>(i + 65);
         sectionsArray[i].capacity = calculateRandomNumber(3, 6);
-        sectionsArray[i].category = getRandomCategoria(); // gera uma categoria aleatoria para a section
+        do {
+            sectionsArray[i].category = getRandomCategoria(); // Gera uma categoria aleatória
+        } while (categoriasUsadas.count(sectionsArray[i].category) > 0); // Verifica se a categoria já foi usada
+
+        categoriasUsadas.insert(sectionsArray[i].category);
     }
     return sectionsArray;
 }
-
-
-void addPecaToSection(Peca* listaChegada,int listaDeChegadaSize, Section* sectionsArray, Section& section){
-    for (int i = 0; i < section.tamanho; i++){
-        for (int j = 0; j < listaDeChegadaSize; j++)
-            if (sectionsArray[i].category == listaChegada[j].category){
-                std::cout << "      " << listaChegada[j].category << "  |  " <<  listaChegada[j].brand
-                          << "  |  " <<  listaChegada[j].serialNumber<< "  |  "  <<  listaChegada[j].price << " $" <<std::endl;
-            }
-    }
-}
-
 
 void printSection(Section& section, Section* sectionsArray){
     std::cout << "          *********************************************" << std::endl;
@@ -39,4 +33,5 @@ void printSection(Section& section, Section* sectionsArray){
                   << " Faturacao: " << "0" << std::endl;
     }
 }
+
 
