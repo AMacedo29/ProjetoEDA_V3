@@ -65,7 +65,6 @@ void SellManual(Peca* listaChegada, Section* sectionarray, Section& section){
     } while (true);
 }
 
-
 void mudaCategoria(Section* sectionarray, Section& section){
     std::string mudacategoria;
     char sectionchange;
@@ -79,16 +78,13 @@ void mudaCategoria(Section* sectionarray, Section& section){
             break;
         }
     } while(true);
-
-    do {
         std::cout << "Digite a categoria que deseja alterar" << std::endl;
         std::cin >> mudacategoria;
-        if(!validateCategory(mudacategoria, sectionarray, section.tamanho)){
-            std::cout << "Categoria invalida. Tente novamente." << std::endl;
-        } else {
-            std::cout << "Foi encontrado categoria!" << std::endl;
-            break;
+        for(int i = 0; i < section.tamanho; ++i){
+            if(sectionchange == sectionarray[i].id){
+                sectionarray[i].category = mudacategoria;
+                std::cout << "Categoria alterada com secesso." << std::endl;
+                break;
+            }
         }
-    } while(true);
-
 }
