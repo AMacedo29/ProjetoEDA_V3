@@ -19,5 +19,7 @@ void printListaChegada(Peca* listaChegada);
 
 void ordenarListaPorMarca(Peca* listaChegada);
 
+void ordenarListaPorPreco(Peca* listaChegada);
+
 
 #endif //PROJETOEDA_PECAS_H

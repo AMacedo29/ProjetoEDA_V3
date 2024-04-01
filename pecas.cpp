@@ -47,3 +47,15 @@ void ordenarListaPorMarca(Peca* listaChegada) {
         }
     }
 }
+
+void ordenarListaPorPreco(Peca* listaChegada) {
+    for (int i = 0; i < listaDeChegadaSize - 1; ++i) {
+        for (int j = 0; j < listaDeChegadaSize - i - 1; ++j) {
+            if (listaChegada[j].price > listaChegada[j + 1].price) {
+                Peca temp = listaChegada[j];
+                listaChegada[j] = listaChegada[j + 1];
+                listaChegada[j + 1] = temp;
+            }
+        }
+    }
+}

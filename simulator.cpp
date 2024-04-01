@@ -3,7 +3,7 @@
 #include "utils.h"
 #include <cstdlib> // For the rand() function
 #include <ctime>   // For the time() function
-#include "pecas.h"
+#include "pecas.h"g
 #include "sections.h"
 #include <algorithm>
 

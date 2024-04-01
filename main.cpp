@@ -87,7 +87,8 @@ int main() {
     Section* sectionsArray = inicializeSections(section);
     printSection(section,sectionsArray);
     Peca* listaChegada = iniciarListaChegada( section, sectionsArray);
-    ordenarListaPorMarca(listaChegada);
+    ordenarListaPorPreco(listaChegada);
+    //ordenarListaPorMarca(listaChegada);
     printListaChegada(listaChegada);
     std::cout << section.totalIncome << std::endl;
     int totalCapacity = sectionsCapacity(section, sectionsArray);
@@ -111,7 +112,8 @@ int main() {
                 dia++;
                 printNewSection(section, sectionsArray, totalCapacity);
                 adicionarPeca(listaChegada, NextDayPecas, section, sectionsArray);
-                ordenarListaPorMarca(listaChegada);
+                ordenarListaPorPreco(listaChegada);
+                //ordenarListaPorMarca(listaChegada);
                 vendaPecas(section,totalCapacity);
                 mostrarPecas(listaChegada, NextDayPecas, dia);
                 std::cout << listaDeChegadaSize << std::endl;
