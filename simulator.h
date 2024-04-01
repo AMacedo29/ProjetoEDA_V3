@@ -11,10 +11,14 @@ extern int listaDeChegadaSize; // tive q usar extern pq a variavel está declara
 
 Peca* listaEsperaPeca(Peca* listaChegada, Section& section, Section* sectionsArray, int totalCapacity);
 
-void printNewSection(Section& section, Section* sectionsArray);
+void printNewSection(Section& section, Section* sectionsArray, int totalCapacity);
 
 void removerPecasAdicionadasListaChegada(Peca* listaChegada, Section& section);
 
 void removerPecasComSerialNumberNegativo(Peca* listaChegada);
+
+void vendaPecas(Section& section, int totalCapacity);
+
+void removerPecasVendidas(Section& section, int totalCapacity);
 
 #endif //PROJETOEDA_SIMULATOR_H

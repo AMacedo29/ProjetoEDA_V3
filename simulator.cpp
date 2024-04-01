@@ -4,7 +4,6 @@
 #include <cstdlib> // For the rand() function
 #include <ctime>   // For the time() function
 #include "pecas.h"
-#include "sales.h"
 #include "sections.h"
 #include <algorithm>
 
@@ -51,13 +50,13 @@ void mostrarPecas(Peca* listaChegada, int NextDayPecas, int dia) {
 Peca* listaEsperaPeca(Peca* listaChegada, Section& section, Section* sectionsArray, int totalCapacity) {
     section.listaEspera = new Peca[totalCapacity];
     int pecasAdicionadas = 0;
-    for (int i = 0; i < listaDeChegadaSize && pecasAdicionadas < totalCapacity; ++i) {
-        for (int j = 0; j < section.tamanho; ++j) {
+    for (int i = 0; i < totalCapacity && pecasAdicionadas < totalCapacity; i++) {
+        for (int j = 0; j < section.tamanho; j++) {
             if (sectionsArray[j].category == listaChegada[i].category) {
                 section.listaEspera[pecasAdicionadas++] = listaChegada[i];
+                sectionsArray[j].quantity = pecasAdicionadas;
                 break;
             }
-            sectionsArray[j].quantity = pecasAdicionadas;
         }
     }
     return section.listaEspera;
@@ -65,27 +64,28 @@ Peca* listaEsperaPeca(Peca* listaChegada, Section& section, Section* sectionsArr
 
 
 
-void printNewSection(Section& section, Section* sectionsArray){
+void printNewSection(Section& section, Section* sectionsArray, int totalCapacity){
     std::cout << "          *********************************************" << std::endl;
-    std::cout << "          *** Armazem EDA  |  Total Faturacao " << getTotalSales() << " $" << " ***" << std::endl;
+    std::cout << "          *** Armazem EDA  |  Total Faturacao " << section.totalIncome << " $" << " ***" << std::endl;
     std::cout << "          *********************************************" << std::endl;
     for (int i = 0; i < section.tamanho; i++) {
         std::cout << " Seccao " << sectionsArray[i].id << "  | " << " Categoria: " << sectionsArray[i].category
                   << "  | " << " Capacidade: " << sectionsArray[i].capacity << "  | " << " Quantidade: " << sectionsArray[i].quantity << "  | "
                   << " Faturacao: " << "0" << std::endl;
-        for (int j = 0; j < 8; j++) {
+        for (int j = 0; j < totalCapacity && j < 8; j++) {
             if (section.listaEspera[j].category == sectionsArray[i].category) {
-                std::cout << "      " << section.listaEspera[j].category << "  |  " <<  section.listaEspera[j].brand
-                          << "  |  " <<  section.listaEspera[j].serialNumber<< "  |  "  <<  section.listaEspera[j].price << " $" <<std::endl;
+                std::cout << "      " << section.listaEspera[j].category << "  |  " << section.listaEspera[j].brand
+                << "  |  " << section.listaEspera[j].serialNumber << "  |  "
+                << section.listaEspera[j].price << " $" << std::endl;
             }
         }
     }
 }
 
 void removerPecasAdicionadasListaChegada(Peca* listaChegada, Section& section) {
-    for (int i = 0; i < listaDeChegadaSize; ++i) {
+    for (int i = 0; i < listaDeChegadaSize; i++) {
         bool encontrouPecaAdicionada = false;
-        for (int j = 0; j < 8; ++j) {
+        for (int j = 0; j < 8; j++) {
             if (listaChegada[i].serialNumber == section.listaEspera[j].serialNumber){
                 encontrouPecaAdicionada = true;
                 break;
@@ -102,4 +102,24 @@ void removerPecasComSerialNumberNegativo(Peca* listaChegada) {
                                   [](const Peca& p) { return p.serialNumber == -1; });
     int numToRemove = listaDeChegadaSize - (newEnd - listaChegada);
     listaDeChegadaSize -= numToRemove;
+}
+
+void vendaPecas(Section& section, int totalCapacity){
+    section.serialNumberReg = new int[totalCapacity];
+    int probabilidade = calculateRandomNumber(0,100);
+    for (int i = 0; i < totalCapacity; i++){
+        if (section.listaEspera[i].sellprob < probabilidade){
+            section.serialNumberReg[i] = section.listaEspera[i].serialNumber;
+            section.totalIncome += section.listaEspera[i].price;
+            section.listaEspera[i].serialNumber = -1;
+        }
+    }
+    removerPecasVendidas(section, totalCapacity);
+}
+
+void removerPecasVendidas(Section& section, int totalCapacity) {
+    Peca* newEnd = std::remove_if(section.listaEspera, section.listaEspera + totalCapacity,
+                                  [](const Peca& p) { return p.serialNumber == -1; });
+    int numToRemove = totalCapacity - (newEnd - section.listaEspera);
+    totalCapacity -= numToRemove;
 }

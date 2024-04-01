@@ -10,7 +10,7 @@ struct Section{
     std::string category;
     int quantity;
     int totalIncome;
-    int serialNumberReg;
+    int* serialNumberReg;
     Peca *listaEspera;
     int tamanho;
 

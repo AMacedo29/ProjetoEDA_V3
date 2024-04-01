@@ -89,6 +89,7 @@ int main() {
     Peca* listaChegada = iniciarListaChegada( section, sectionsArray);
     ordenarListaPorMarca(listaChegada);
     printListaChegada(listaChegada);
+    std::cout << section.totalIncome << std::endl;
     int totalCapacity = sectionsCapacity(section, sectionsArray);
     (void)listaEsperaPeca(listaChegada, section, sectionsArray, totalCapacity);
     bool sair = false;
@@ -108,11 +109,13 @@ int main() {
             case 's':
                 std::cout << "Dia: "  << dia << std::endl;
                 dia++;
-                printNewSection(section, sectionsArray);
+                printNewSection(section, sectionsArray, totalCapacity);
                 adicionarPeca(listaChegada, NextDayPecas, section, sectionsArray);
                 ordenarListaPorMarca(listaChegada);
+                vendaPecas(section,totalCapacity);
                 mostrarPecas(listaChegada, NextDayPecas, dia);
                 std::cout << listaDeChegadaSize << std::endl;
+                std::cout << section.totalIncome << std::endl;
                 break;
             case 'g':
                 menu_manager(sectionsArray, listaChegada, section);

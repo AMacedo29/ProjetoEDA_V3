@@ -1,6 +1,5 @@
 #include <iostream>
 #include "sections.h"
-#include "sales.h"
 #include "utils.h"
 #include "pecas.h"
 #include "simulator.h"
@@ -25,7 +24,7 @@ Section* inicializeSections(Section& section){
 
 void printSection(Section& section, Section* sectionsArray){
     std::cout << "          *********************************************" << std::endl;
-    std::cout << "          *** Armazem EDA  |  Total Faturacao " << getTotalSales() << " $" << " ***" << std::endl;
+    std::cout << "          *** Armazem EDA  |  Total Faturacao " << section.totalIncome << " $" << " ***" << std::endl;
     std::cout << "          *********************************************" << std::endl;
     for (int i = 0; i < section.tamanho; ++i) {
         std::cout << " Seccao " << sectionsArray[i].id << "  | " << " Categoria: " << sectionsArray[i].category
