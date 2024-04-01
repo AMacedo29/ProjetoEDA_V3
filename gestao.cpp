@@ -6,7 +6,19 @@
 //
 //
 // Ponto 3.1 - Venda Manual
-// Funções Funcionais
+// Funções
+/**
+ * Função para validar o ID da secção.
+ *
+ * @param id - Recebe o ID da seção a ser validado.
+ * @param sectionarray - Ponteiro para o array de seções.
+ * @param tamanho - Tamanho do array de seções.
+ * @return Retorna true se o ID da seção for encontrado no array, caso contrário, retorna false.
+ * Explicação:
+ * Percorre o array de secções
+ * Verifica se o ID fornecido corresponde ao ID da seção atual no índice atual do loop
+ * Se houver uma correspondência retorna true, senão termina o loop e retorna false;
+ */
 bool validateSectionID(char id, Section* sectionarray, int tamanho) {
     for (int i = 0; i < tamanho; ++i) {
         if (id == sectionarray[i].id) {
@@ -16,6 +28,17 @@ bool validateSectionID(char id, Section* sectionarray, int tamanho) {
     return false;
 }
 
+/**
+ * Função para validar a marca do produtos
+ * @param marca - Recebe marca do produto a ser valida.
+ * @param listaChegada - Ponteiro para o array de produtos.
+ * @param tamanho - Tamanho do array de produto(tamanho = 50, valor fixo);
+ * @return - Retorna true se a marca do produto for encontrada no array, caso contrário, retorna false.
+ * Explicação:
+ * Percorre o array dos produtos
+ * Verifica se a marca fornecida corresponde à marca do produto atual no índice atual do loop
+ * Se houver uma correspondência retorna true, senão termina o loop e retorna false;
+ */
 bool validateProductBrand(std::string marca, Peca* listaChegada, int tamanho) {
     for (int i = 0; i < tamanho; ++i) {
         if (marca == listaChegada[i].brand) {
@@ -30,10 +53,10 @@ bool validateCategory(std::string categoria, Section* sectionarray, int tamanho)
         if(categoria == sectionarray[i].category){
             return true;
         }
-
     }
     return false;
 }
+
 //Incompleto
 void SellManual(Peca* listaChegada, Section* sectionarray, Section& section){
     char sectionIDsell;
@@ -93,9 +116,6 @@ void addSection(Section* sectionarray, Section& section){
     char sectionID;
     int sectionCapacity;
     std::string sectionCategory;
-
-
-
     do {
         std::cout << "Digite o ID da seccao: " << std::endl;
         std::cin >> sectionID;
