@@ -11,7 +11,7 @@ struct Section{
     int quantity;
     int totalIncome;
     int serialNumberReg;
-    Peca *listaPecas;
+    Peca *listaEspera;
     int tamanho;
 
 };

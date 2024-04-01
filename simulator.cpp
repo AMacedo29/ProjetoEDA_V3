@@ -6,6 +6,7 @@
 #include "pecas.h"
 #include "sales.h"
 #include "sections.h"
+#include <algorithm>
 
 
 int listaDeChegadaSize = 0; // variavel global para guardar o tamanho da lista
@@ -29,6 +30,7 @@ void adicionarPeca(Peca* listaChegada, int& NextDayPecas, Section& section, Sect
         }
     }
     removerPecasAdicionadasListaChegada(listaChegada,section);//arranjar
+    removerPecasComSerialNumberNegativo(listaChegada);
 }
 
 void mostrarPecas(Peca* listaChegada, int NextDayPecas, int dia) {
@@ -36,26 +38,31 @@ void mostrarPecas(Peca* listaChegada, int NextDayPecas, int dia) {
     std::cout << "******** Lista de Chegada do dia " << dia -1 << " ********" << std::endl;
     std::cout << "*******************************************" << std::endl;
     for (int i = 0; i < NextDayPecas; i++) {
-        std::cout << listaChegada[i].category << "  |  "
-                  << listaChegada[i].brand << "  |  "
-                  << listaChegada[i].serialNumber << "  |  "
-                  << listaChegada[i].price << " $" << std::endl;
+        if (listaChegada[i].category != "" && listaChegada[i].brand != "" && listaChegada[i].serialNumber != -1 && listaChegada[i].price != -1) {
+            std::cout << listaChegada[i].category << "  |  "
+                      << listaChegada[i].brand << "  |  "
+                      << listaChegada[i].serialNumber << "  |  "
+                      << listaChegada[i].price << " $" << std::endl;
+        }
     }
 }
 
+
 Peca* listaEsperaPeca(Peca* listaChegada, Section& section, Section* sectionsArray, int totalCapacity) {
-    section.listaPecas = new Peca[totalCapacity];
+    section.listaEspera = new Peca[totalCapacity];
     int pecasAdicionadas = 0;
-    for (int i = 0; i < totalCapacity && pecasAdicionadas < 8; ++i) {
+    for (int i = 0; i < listaDeChegadaSize && pecasAdicionadas < totalCapacity; ++i) {
         for (int j = 0; j < section.tamanho; ++j) {
             if (sectionsArray[j].category == listaChegada[i].category) {
-                section.listaPecas[pecasAdicionadas++] = listaChegada[i];
+                section.listaEspera[pecasAdicionadas++] = listaChegada[i];
                 break;
             }
+            sectionsArray[j].quantity = pecasAdicionadas;
         }
     }
-    return section.listaPecas;
+    return section.listaEspera;
 }
+
 
 
 void printNewSection(Section& section, Section* sectionsArray){
@@ -67,29 +74,32 @@ void printNewSection(Section& section, Section* sectionsArray){
                   << "  | " << " Capacidade: " << sectionsArray[i].capacity << "  | " << " Quantidade: " << sectionsArray[i].quantity << "  | "
                   << " Faturacao: " << "0" << std::endl;
         for (int j = 0; j < 8; j++) {
-            if (section.listaPecas[j].category == sectionsArray[i].category) {
-                std::cout << "      " << section.listaPecas[j].category << "  |  " <<  section.listaPecas[j].brand
-                          << "  |  " <<  section.listaPecas[j].serialNumber<< "  |  "  <<  section.listaPecas[j].price << " $" <<std::endl;
+            if (section.listaEspera[j].category == sectionsArray[i].category) {
+                std::cout << "      " << section.listaEspera[j].category << "  |  " <<  section.listaEspera[j].brand
+                          << "  |  " <<  section.listaEspera[j].serialNumber<< "  |  "  <<  section.listaEspera[j].price << " $" <<std::endl;
             }
         }
     }
 }
 
-void removerPecasAdicionadasListaChegada(Peca* listaChegada, Section& section) {//arranjar
+void removerPecasAdicionadasListaChegada(Peca* listaChegada, Section& section) {
     for (int i = 0; i < listaDeChegadaSize; ++i) {
         bool encontrouPecaAdicionada = false;
         for (int j = 0; j < 8; ++j) {
-            if (listaChegada[i].serialNumber == section.listaPecas[j].serialNumber){
+            if (listaChegada[i].serialNumber == section.listaEspera[j].serialNumber){
                 encontrouPecaAdicionada = true;
                 break;
             }
         }
         if (encontrouPecaAdicionada) {
-            for (int k = i; k < listaDeChegadaSize - 1; ++k) {
-                listaChegada[k] = listaChegada[k + 1];
-            }
-            listaDeChegadaSize--;
-            i--;
+            listaChegada[i].serialNumber = -1;
         }
     }
+}
+
+void removerPecasComSerialNumberNegativo(Peca* listaChegada) {
+    Peca* newEnd = std::remove_if(listaChegada, listaChegada + listaDeChegadaSize,
+                                  [](const Peca& p) { return p.serialNumber == -1; });
+    int numToRemove = listaDeChegadaSize - (newEnd - listaChegada);
+    listaDeChegadaSize -= numToRemove;
 }

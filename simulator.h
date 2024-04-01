@@ -15,4 +15,6 @@ void printNewSection(Section& section, Section* sectionsArray);
 
 void removerPecasAdicionadasListaChegada(Peca* listaChegada, Section& section);
 
+void removerPecasComSerialNumberNegativo(Peca* listaChegada);
+
 #endif //PROJETOEDA_SIMULATOR_H
