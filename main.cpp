@@ -51,6 +51,7 @@ void menu_manager(Section* sectionsArray, Peca* listaChegada, Section& section) 
                 std::cout << "Categoria invalida. Digite outra caregoria: " << std::endl;*/
                 break;
             case '4':
+                addSection(sectionsArray, section);
                 /*
                 std::cout << "Escolheu a opcao 4 - Adicionar seccao  " << std::endl;
                 std::cout << "Digite o ID da seccao:" << std::endl;

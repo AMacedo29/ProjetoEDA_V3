@@ -94,6 +94,8 @@ void addSection(Section* sectionarray, Section& section){
     int sectionCapacity;
     std::string sectionCategory;
 
+
+
     do {
         std::cout << "Digite o ID da seccao: " << std::endl;
         std::cin >> sectionID;
@@ -115,5 +117,10 @@ void addSection(Section* sectionarray, Section& section){
             std::cout << "Capacidade invalida. Tente novamente." << std::endl;
         }
     } while (!(sectionCapacity >= 3 && sectionCapacity <= 6 ));
+
+    std::cout << "Digite a Categoria: " << std::endl;
+    std::cin >> sectionCategory;
+    Section novasecao;
+
 
 }
