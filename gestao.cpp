@@ -112,38 +112,48 @@ void mudaCategoria(Section* sectionarray, Section& section){
         }
 }
 
-void addSection(Section* sectionarray, Section& section){
+Section* addSection(Section*& sectionarray, Section& section) {
     char sectionID;
     int sectionCapacity;
     std::string sectionCategory;
-    do {
-        std::cout << "Digite o ID da seccao: " << std::endl;
-        std::cin >> sectionID;
-        if (!validateSectionID(sectionID, sectionarray, section.tamanho)) { //validateSectionID(sectionIDsell, sectionarray, section.tamanho) == false
-            std::cout << "ID da seccao invalida. Tente novamente." << std::endl;
-        } else {
-            std::cout << "Foi encontrado seccao!" << std::endl;
-            break;
-        }
-    } while (true);
+
+    std::cout << "Digite o ID da seccao: " << std::endl;
+    std::cin >> sectionID;
 
     do {
         std::cout << "Digite a capacidade da seccao (valores entre 3 e 6): " << std::endl;
         std::cin >> sectionCapacity;
-        if (sectionCapacity >= 3 && sectionCapacity <= 6 ) { //validateSectionID(sectionIDsell, sectionarray, section.tamanho) == false
+        if (sectionCapacity >= 3 && sectionCapacity <= 6) {
             std::cout << "Capacidade Valida" << std::endl;
             break;
         } else {
             std::cout << "Capacidade invalida. Tente novamente." << std::endl;
         }
-    } while (!(sectionCapacity >= 3 && sectionCapacity <= 6 ));
+    } while (!(sectionCapacity >= 3 && sectionCapacity <= 6));
 
     std::cout << "Digite a Categoria: " << std::endl;
     std::cin >> sectionCategory;
-    Section novasecao;
 
+    int novoTamanho = section.tamanho + 1;
+    Section* novoArray = new Section[novoTamanho];
 
+    for (int i = 0; i < section.tamanho; ++i) {
+        novoArray[i] = sectionarray[i];
+    }
+
+    novoArray[novoTamanho - 1].id = sectionID;
+    novoArray[novoTamanho - 1].capacity = sectionCapacity;
+    novoArray[novoTamanho - 1].category = sectionCategory;
+
+    delete[] sectionarray;
+
+    sectionarray = novoArray;
+
+    section.tamanho = novoTamanho;
+
+    return novoArray;
 }
+
 
 //3.2 Implementar promoção
 

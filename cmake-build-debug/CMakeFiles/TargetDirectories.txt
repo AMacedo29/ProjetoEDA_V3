@@ -1,3 +1,0 @@
-C:/Users/KAMAXO/Documents/GitHub/TrabalhoEDA/ProjetoEDA_V3/cmake-build-debug/CMakeFiles/ProjetoEDA.dir
-C:/Users/KAMAXO/Documents/GitHub/TrabalhoEDA/ProjetoEDA_V3/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/KAMAXO/Documents/GitHub/TrabalhoEDA/ProjetoEDA_V3/cmake-build-debug/CMakeFiles/rebuild_cache.dir
