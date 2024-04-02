@@ -10,6 +10,16 @@
 
 int listaDeChegadaSize = 0; // variavel global para guardar o tamanho da lista
 
+/**
+*  adiciona pecas a lista de chegada
+* esta funcao adiciona pecas (aleatoriamente) a lista de chegada desde que haja espaço disponivel na lista
+* apos adicionar as pecas sao removidas da lista de chegada as pecas adicionadas e as pecas com os serial numbers negativos
+*
+* @param listaChegada um ponteiro para o array de peças representando a lista de chegada.
+* @param NextDayPecas uma referencia para o inteiro que mantém o indice do proximo espaco disponivel na lista de chegada.
+* @param section A secao da qual as pecas sao retiradas.
+* @param sectionsArray Um ponteiro para o array de secoes disponiveis.
+*/
 void adicionarPeca(Peca* listaChegada, int& NextDayPecas, Section& section, Section* sectionsArray) {
     if (NextDayPecas >= 50) {
         std::cout << "A lista de chegada esta cheia. Nao e possivel adicionar mais pecas." << std::endl;
@@ -31,7 +41,13 @@ void adicionarPeca(Peca* listaChegada, int& NextDayPecas, Section& section, Sect
     removerPecasAdicionadasListaChegada(listaChegada,section);//arranjar
     removerPecasComSerialNumberNegativo(listaChegada);
 }
-
+/**
+ * esta funcao mostra a lista  chegada no dia anterior, incluindo informações como categoria, marca, número de série e preço
+ *
+ * @param listaChegada um ponteiro para o array de pecas representando a lista de chegada
+ * @param NextDayPecas o numero de pecas presentes na lista de chegada do dia anterior
+ * @param dia o numero do dia para o qual a lista de chegada esta sendo exibida
+ */
 void mostrarPecas(Peca* listaChegada, int NextDayPecas, int dia) {
     std::cout << "*******************************************" << std::endl;
     std::cout << "******** Lista de Chegada do dia " << dia -1 << " ********" << std::endl;
