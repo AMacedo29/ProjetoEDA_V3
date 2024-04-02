@@ -7,9 +7,12 @@
 #include "simulator.h"
 #include "gestao.h"
 
+int dia=1;
+int NextDayPecas = 10;
 void menu_manager(Section* sectionsArray, Peca* listaChegada, Section& section) {
     bool sair = false;
     char option;
+    int totalCapacity = sectionsCapacity(section, sectionsArray);
     do {
         std::cout << "***** Bem Vindo Gestor *****" << std::endl;
         std::cout << "1 - Venda Manual " << std::endl;
@@ -35,11 +38,7 @@ void menu_manager(Section* sectionsArray, Peca* listaChegada, Section& section) 
                 std::cout << "Venda efetuada com sucesso!" << std::endl;*/
                 break;
             case '2':
-                std::cout << "Escolheu a opcao 2 - Promocao" << std::endl;
-                std::cout << "Duracao da promoção (em dias): " << std::endl;
-                std::cout << "Percentagem de desconto: " << std::endl;
-                std::cout << "Digite o ID da seccao que ira ter o desconto: " << std::endl;
-                std::cout << "O ID da seccao que tentou inserir e invalido tente outro ID : " << std::endl;
+                promocao(section,sectionsArray,totalCapacity);
                 break;
             case '3':
                 mudaCategoria(sectionsArray, section);
@@ -69,6 +68,14 @@ void menu_manager(Section* sectionsArray, Peca* listaChegada, Section& section) 
                 break;
             case '7':
                 std::cout << "Escolheu a opcao 7 - Imprimir Armazem " << std::endl;
+                printNewSection(section, sectionsArray, totalCapacity);
+                adicionarPeca(listaChegada, NextDayPecas, section, sectionsArray);
+                ordenarListaPorPreco(listaChegada);
+                //ordenarListaPorMarca(listaChegada);
+                vendaPecas(section,totalCapacity);
+                mostrarPecas(listaChegada, NextDayPecas, dia);
+                std::cout << listaDeChegadaSize << std::endl;
+                std::cout << section.totalIncome << std::endl;
                 break;
             case '0':
                 std::cout << "Escolheu a opcao Sair. Adeus!" << std::endl;
@@ -95,8 +102,8 @@ int main() {
     (void)listaEsperaPeca(listaChegada, section, sectionsArray, totalCapacity);
     bool sair = false;
     char option0;
-    int dia=1;
-    int NextDayPecas = 10;
+    //int dia=1;
+    //int NextDayPecas = 10;
 
     do{
         std::cout << std::endl;

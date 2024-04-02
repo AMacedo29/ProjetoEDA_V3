@@ -19,7 +19,7 @@
  * Verifica se o ID fornecido corresponde ao ID da seção atual no índice atual do loop
  * Se houver uma correspondência retorna true, senão termina o loop e retorna false;
  */
-bool validateSectionID(char id, Section* sectionarray, int tamanho) {
+bool validateSectionID(char id, Section* sectionarray, int tamanho) { // provavelmente queres Section* sectionsArray
     for (int i = 0; i < tamanho; ++i) {
         if (id == sectionarray[i].id) {
             return true;
@@ -143,4 +143,29 @@ void addSection(Section* sectionarray, Section& section){
     Section novasecao;
 
 
+}
+
+//3.2 Implementar promoção
+
+void promocao(Section& section, Section* sectionsArray, int totalCapacity){
+    char id;
+    int desconto;
+    int duracao;
+    std::cout << "Escolheu a opcao 2 - Promocao" << std::endl;
+    std::cout << "Duracao da promocao (em dias): " << std::endl;
+    std::cin >> duracao;
+    std::cout << "Digite o ID da seccao que ira ter o desconto: " << std::endl;
+    std::cin >> id;
+    std::cout << "Percentagem de desconto: " << std::endl;
+    std::cin >> desconto;
+    for(int k = 0; k < duracao; k++) {
+        for (int i = 0; i < section.tamanho; i++) {
+            for (int j = 0; j < totalCapacity; j++) {
+                if (id == sectionsArray[i].id && sectionsArray[i].category == section.listaEspera[j].category) {
+                    section.listaEspera[j].price -= section.listaEspera[j].price * desconto / 100;
+                    section.listaEspera[j].sellprob += 15;
+                }
+            }
+        }
+    }
 }
