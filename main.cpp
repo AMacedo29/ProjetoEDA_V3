@@ -9,6 +9,40 @@
 
 int dia=1;
 int NextDayPecas = 10;
+int sub_menu(Peca* listaChegada){
+    bool sair = false;
+    char optionsub;
+    do {
+        std::cout << "***** Imprimir Lista *****" << std::endl;
+        std::cout << "1 - Ordenar lista por Marca " << std::endl;
+        std::cout << "2 - Ordenar lista por Preco " << std::endl;
+        std::cout << "0 - Sair" << std::endl;
+        std::cout << "Escolha a sua option: " << std::endl;
+        std::cin >> optionsub;
+        std::cout << std::endl;
+        switch (optionsub) {
+            case '1':
+                std::cout << "Lista Ordenada por Marca" << std::endl;
+                ordenarListaPorMarca(listaChegada);
+                printListaChegada(listaChegada);
+                break;
+            case '2':
+                std::cout << "Lista Ordenada por Preco" << std::endl;
+                ordenarListaPorPreco(listaChegada);
+                printListaChegada(listaChegada);
+                break;
+            case '0':
+                std::cout << "Escolheu a opcao Sair. Adeus!" << std::endl;
+                sair = true;
+                break;
+            default:
+                std::cout << "Opcao Invalida" << std::endl;
+        }
+    } while (!sair);
+    return 0;
+}
+
+
 void menu_manager(Section* sectionsArray, Peca* listaChegada, Section& section) {
     bool sair = false;
     char option;
@@ -79,6 +113,7 @@ void menu_manager(Section* sectionsArray, Peca* listaChegada, Section& section) 
                 mostrarPecas(listaChegada, NextDayPecas, dia);
                 std::cout << listaDeChegadaSize << std::endl;
                 std::cout << section.totalIncome << std::endl;
+                sub_menu(listaChegada);
                 break;
             case '0':
                 std::cout << "Escolheu a opcao Sair. Adeus!" << std::endl;
@@ -91,6 +126,7 @@ void menu_manager(Section* sectionsArray, Peca* listaChegada, Section& section) 
     }while (!sair);
 
 }
+
 
 int main() {
     Section section;
