@@ -29,7 +29,7 @@ void printSection(Section& section, Section* sectionsArray){
     for (int i = 0; i < section.tamanho; ++i) {
         std::cout << " Seccao " << sectionsArray[i].id << "  | " << " Categoria: " << sectionsArray[i].category
                   << "  | " << " Capacidade: " << sectionsArray[i].capacity << "  | " << " Quantidade: " << sectionsArray[i].quantity << "  | "
-                  << " Faturacao: " << "0" << std::endl;
+                  << " Faturacao: " << sectionsArray[i].totalIncome << std::endl;
     }
 }
 

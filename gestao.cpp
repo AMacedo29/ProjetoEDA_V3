@@ -172,8 +172,9 @@ void promocao(Section& section, Section* sectionsArray, int totalCapacity){
         for (int i = 0; i < section.tamanho; i++) {
             for (int j = 0; j < totalCapacity; j++) {
                 if (id == sectionsArray[i].id && sectionsArray[i].category == section.listaEspera[j].category) {
-                    section.listaEspera[j].price -= section.listaEspera[j].price * desconto / 100;
-                    section.listaEspera[j].sellprob += 15;
+                    int novoPreco = section.listaEspera[j].price - ((section.listaEspera[j].price * desconto) / 100);
+                    section.listaEspera[j].sellprob = std::min(section.listaEspera[j].sellprob + 15, 100);
+                    section.listaEspera[j].price = novoPreco;
                 }
             }
         }

@@ -99,7 +99,7 @@ int main() {
     printListaChegada(listaChegada);
     std::cout << section.totalIncome << std::endl;
     int totalCapacity = sectionsCapacity(section, sectionsArray);
-    (void)listaEsperaPeca(listaChegada, section, sectionsArray, totalCapacity);
+    section.listaEspera = listaEsperaPeca(listaChegada, section, sectionsArray, totalCapacity,8);
     bool sair = false;
     char option0;
     //int dia=1;

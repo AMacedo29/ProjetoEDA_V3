@@ -46,11 +46,10 @@ void mostrarPecas(Peca* listaChegada, int NextDayPecas, int dia) {
     }
 }
 
-
-Peca* listaEsperaPeca(Peca* listaChegada, Section& section, Section* sectionsArray, int totalCapacity) {
+Peca* listaEsperaPeca(Peca* listaChegada, Section& section, Section* sectionsArray, int totalCapacity, int pecasPorDia) {
     section.listaEspera = new Peca[totalCapacity];
     int pecasAdicionadas = 0;
-    for (int i = 0; i < totalCapacity && pecasAdicionadas < totalCapacity; i++) {
+    for (int i = 0; i < pecasPorDia && pecasAdicionadas < totalCapacity; i++) {
         for (int j = 0; j < section.tamanho; j++) {
             if (sectionsArray[j].category == listaChegada[i].category) {
                 section.listaEspera[pecasAdicionadas++] = listaChegada[i];
@@ -61,8 +60,6 @@ Peca* listaEsperaPeca(Peca* listaChegada, Section& section, Section* sectionsArr
     }
     return section.listaEspera;
 }
-
-
 
 void printNewSection(Section& section, Section* sectionsArray, int totalCapacity){
     std::cout << "          *********************************************" << std::endl;
@@ -97,13 +94,6 @@ void removerPecasAdicionadasListaChegada(Peca* listaChegada, Section& section) {
     }
 }
 
-void removerPecasComSerialNumberNegativo(Peca* listaChegada) {
-    Peca* newEnd = std::remove_if(listaChegada, listaChegada + listaDeChegadaSize,
-                                  [](const Peca& p) { return p.serialNumber == -1; });
-    int numToRemove = listaDeChegadaSize - (newEnd - listaChegada);
-    listaDeChegadaSize -= numToRemove;
-}
-
 void vendaPecas(Section& section, int totalCapacity){
     section.serialNumberReg = new int[totalCapacity];
     int probabilidade = calculateRandomNumber(0,100);
@@ -117,9 +107,18 @@ void vendaPecas(Section& section, int totalCapacity){
     removerPecasVendidas(section, totalCapacity);
 }
 
+
+void removerPecasComSerialNumberNegativo(Peca* listaChegada) {
+    Peca* newEnd = std::remove_if(listaChegada, listaChegada + listaDeChegadaSize,
+                                  [](const Peca& p) { return p.serialNumber == -1; });
+    int numToRemove = listaDeChegadaSize - (newEnd - listaChegada);
+    listaDeChegadaSize -= numToRemove;
+}
+
 void removerPecasVendidas(Section& section, int totalCapacity) {
     Peca* newEnd = std::remove_if(section.listaEspera, section.listaEspera + totalCapacity,
                                   [](const Peca& p) { return p.serialNumber == -1; });
     int numToRemove = totalCapacity - (newEnd - section.listaEspera);
     totalCapacity -= numToRemove;
 }
+
