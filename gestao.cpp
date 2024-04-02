@@ -49,6 +49,7 @@ bool validateProductBrand(std::string marca, Peca* listaChegada, int tamanho) {
     return false;
 }
 
+/*
 bool validateCategory(std::string categoria, Section* sectionarray, int tamanho){
     for (int i = 0; i < tamanho; ++i) {
         if(categoria == sectionarray[i].category){
@@ -57,8 +58,17 @@ bool validateCategory(std::string categoria, Section* sectionarray, int tamanho)
     }
     return false;
 }
-
-//Incompleto
+*/
+/**
+ * Função para realizar uma venda manual de um produto
+ * @param listaChegada - Ponteiro para lista de peças
+ * @param sectionarray - Ponteiro para o array de secções
+ * @param section - Referencias para a secção
+ * Explicação:
+ * Pede ao utlizador a secção e a marca do produto, usa as funções validateSectionID para verificar se existe a secção
+ * e validateProductBrand para verificar a marca do produto na lista de chegada;
+ * Função inacabada
+ */
 void SellManual(Peca* listaChegada, Section* sectionarray, Section& section){
     char sectionIDsell;
     std::string brandsell;
@@ -88,18 +98,29 @@ void SellManual(Peca* listaChegada, Section* sectionarray, Section& section){
         }
     } while (true);
 }
-//Incompleto
+
+/**
+ * Função para modificar a categoria de uma seção.
+ * @param sectionarray - Ponteiro para o array de seções.
+ * @param section - Referência para a seção
+ * Explicação:
+ * Pede a categoria e a secção ao utilizador, no qual é secção é feita uma verificação com a função validatevalidateSectionID
+ * a ver se a mesma existe
+ * Percorre as secções todas até encontrar a secção que foi inserida e muda a categoria dessa secção
+ */
 void mudaCategoria(Section* sectionarray, Section& section){
     std::string mudacategoria;
     char sectionchange;
+    // Loop para garantir que o usuário insira uma seção válida
     do {
         std::cout << "Digite a seccao" << std::endl;
         std::cin >> sectionchange;
+
         if(!validateSectionID(sectionchange, sectionarray, section.tamanho)){
             std::cout << "Seccao invalida. Tente novamente." << std::endl;
         } else {
             std::cout << "Foi encontrado Categoria!" << std::endl;
-            break;
+            break; // Sai do loop se a secção for válida
         }
     } while(true);
         std::cout << "Digite a categoria que deseja alterar" << std::endl;
@@ -112,15 +133,24 @@ void mudaCategoria(Section* sectionarray, Section& section){
             }
         }
 }
-
+/**
+ * Função para adicionar uma nova secção
+ *
+ * @param sectionarray - Ponteiro para o array de secções.
+ * @param section - Referência para a secção que será adicionada.
+ * @return - Ponteiro para o novo array de secções
+ * Explicação:
+ * Pede ao utilizador qual secção, a capacidade e a Categoria que deseja adicionar;
+ * É criado um novo array onde é mandado todos dados do sectionarray para o novo array;
+ * Com os dados inseridos pelo utilizador são enviaados para a ultima posição que foi adicionada;
+ * Por fim é atualziado o tamanho da secçao (section.tamanho) e retorna o ponteiro para o novo array de secções
+ */
 Section* addSection(Section*& sectionarray, Section& section) {
     char sectionID;
     int sectionCapacity;
     std::string sectionCategory;
-
     std::cout << "Digite o ID da seccao: " << std::endl;
     std::cin >> sectionID;
-
     do {
         std::cout << "Digite a capacidade da seccao (valores entre 3 e 6): " << std::endl;
         std::cin >> sectionCapacity;
@@ -157,7 +187,6 @@ Section* addSection(Section*& sectionarray, Section& section) {
 
 
 //3.2 Implementar promoção
-
 void promocao(Section& section, Section* sectionsArray, int totalCapacity){
     char id;
     int desconto;
@@ -184,7 +213,14 @@ void promocao(Section& section, Section* sectionsArray, int totalCapacity){
 
 
 //3.5 - Gravar Armazém em Ficheiros
-
+/**
+ * Função para gravar a lista de peças em ficheiros
+ * @param listaChegada - Ponteiro para a lista de peças
+ * Explicação:
+ * Abre o arquivo "listachegada.txt" para escrita e verifica se foi aberto
+ * Envia as peças para dentro do ficheiro
+ * Após isso fecha o ficherio
+ */
 void gravarlistachegada(Peca* listaChegada){
     std::fstream file("listachegada.txt", std::ios::out);
     if(file.is_open()){
@@ -199,7 +235,16 @@ void gravarlistachegada(Peca* listaChegada){
     }
 }
 
-
+/**
+ * Função para gravar as secções do armazem.
+ *
+ * @param sectionsArray - Ponteiro para o array de seções do armazém.
+ * @param section - Referência para a seção do armazém.
+ * Explicação:
+ * Abre o arquivo "Armazem.txt" para escrita e verifica se foi aberto
+ * Envia as secções para dentro do ficheiro
+ * Após isso fecha o ficherio
+ */
 void gravararmazem(Section* sectionsArray, Section& section){
     std::fstream file("Armazem.txt", std::ios::out);
     if(file.is_open()){
@@ -214,6 +259,15 @@ void gravararmazem(Section* sectionsArray, Section& section){
     }
 }
 
+/**
+ * Função para gravar o valor total de facturamento armazem
+ *
+ * @param section - Referência para a seção do armazém.
+ * Explicação:
+ * Abre o arquivo "FacturamentoArmazem.txt" para escrita e verifica se foi aberto
+ * Envia o valor total
+ * Após isso fecha o ficherio
+ */
 void gravartotalfacturamente(Section& section){
     std::fstream file("FacturamentoArmazem.txt", std::ios::out);
     if(file.is_open()){
