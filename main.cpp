@@ -23,7 +23,7 @@ int sub_menu(Peca* listaChegada){
         switch (optionsub) {
             case '1':
                 std::cout << "Lista Ordenada por Marca" << std::endl;
-                ordenarListaPorMarca(listaChegada);
+                //ordenarListaPorMarca(listaChegada);
                 printListaChegada(listaChegada);
                 break;
             case '2':

@@ -46,6 +46,17 @@ void mostrarPecas(Peca* listaChegada, int NextDayPecas, int dia) {
     }
 }
 
+/**
+ * Esta função cria uma lista de espera de peças com base na lista de chegada de peças,
+ * uma seccão específica e um array de seccões, dada a capacidade total das seçoes e o número a adicionar
+ * de peças por dia.
+ * @param listaChegada Ponteiro para a lista de chegada de peças.
+ * @param section Referência à struct section.
+ * @param sectionsArray Ponteiro para o array de seccoes.
+ * @param totalCapacity Capacidade total das seccoes.
+ * @param pecasPorDia Número de peças que podem ser adicionadas à lista de espera por dia.
+ * @return Um ponteiro para a lista de chegada de peças.
+ */
 Peca* listaEsperaPeca(Peca* listaChegada, Section& section, Section* sectionsArray, int totalCapacity, int pecasPorDia) {
     section.listaEspera = new Peca[totalCapacity];
     int pecasAdicionadas = 0;
@@ -61,6 +72,13 @@ Peca* listaEsperaPeca(Peca* listaChegada, Section& section, Section* sectionsArr
     return section.listaEspera;
 }
 
+/**
+ * Esta função imprime informações sobre as seccoes disponiveis, incluindo os detalhes de cada uma
+ * e as peças em espera para cada categoria.
+ * @param section Referência à struct section.
+ * @param sectionsArray Ponteiro para o array de seções.
+ * @param totalCapacity Capacidade total das seções.
+ */
 void printNewSection(Section& section, Section* sectionsArray, int totalCapacity){
     std::cout << "          *********************************************" << std::endl;
     std::cout << "          *** Armazem EDA  |  Total Faturacao " << section.totalIncome << " $" << " ***" << std::endl;
@@ -79,6 +97,12 @@ void printNewSection(Section& section, Section* sectionsArray, int totalCapacity
     }
 }
 
+/**
+ * Esta função remove as peças que foram adicionadas à lista de espera da lista de chegada de peças.
+ * Coloca as peças com o serialNumber negativo de modo a ter acesso às peças que foram adicionadas.
+ * @param listaChegada Ponteiro para a lista de chegada de peças.
+ * @param section Referência à struct section.
+ */
 void removerPecasAdicionadasListaChegada(Peca* listaChegada, Section& section) {
     for (int i = 0; i < listaDeChegadaSize; i++) {
         bool encontrouPecaAdicionada = false;
@@ -94,6 +118,12 @@ void removerPecasAdicionadasListaChegada(Peca* listaChegada, Section& section) {
     }
 }
 
+/**
+ * Esta função simula a venda de peças da lista de espera de uma seção.
+ * As peças são vendidas com base em uma probabilidade de venda.
+ * @param section Referência à struct section contendo a lista de espera e o número de série registrado.
+ * @param totalCapacity Capacidade total da seção.
+ */
 void vendaPecas(Section& section, int totalCapacity){
     section.serialNumberReg = new int[totalCapacity];
     int probabilidade = calculateRandomNumber(0,100);
@@ -107,7 +137,10 @@ void vendaPecas(Section& section, int totalCapacity){
     removerPecasVendidas(section, totalCapacity);
 }
 
-
+/**
+ * Esta função remove as peças da lista de chegada que possuem número de série negativo (-1).
+ * @param listaChegada Ponteiro para a lista de chegada de peças.
+ */
 void removerPecasComSerialNumberNegativo(Peca* listaChegada) {
     Peca* newEnd = std::remove_if(listaChegada, listaChegada + listaDeChegadaSize,
                                   [](const Peca& p) { return p.serialNumber == -1; });
@@ -115,6 +148,12 @@ void removerPecasComSerialNumberNegativo(Peca* listaChegada) {
     listaDeChegadaSize -= numToRemove;
 }
 
+/**
+ * Esta função remove as peças vendidas da lista de espera de uma seccão.
+ * As peças vendidas são aquelas com número de série igual a -1.
+ * @param section Referência à struct section.
+ * @param totalCapacity Capacidade total das seccoes.
+ */
 void removerPecasVendidas(Section& section, int totalCapacity) {
     Peca* newEnd = std::remove_if(section.listaEspera, section.listaEspera + totalCapacity,
                                   [](const Peca& p) { return p.serialNumber == -1; });

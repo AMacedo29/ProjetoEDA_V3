@@ -5,6 +5,12 @@
 #include "simulator.h"
 #include <unordered_set>
 
+/**
+ * Esta função inicializa as seções do armazém.
+ * Cada seccão recebe um id, uma capacidade e uma categoria única.
+ * @param section Referência à struct section.
+ * @return Um ponteiro para um array de seccões inicializado.
+ */
 Section* inicializeSections(Section& section){
     srand(time(nullptr));
     section.tamanho = calculateRandomNumber(7, 10);
@@ -22,6 +28,12 @@ Section* inicializeSections(Section& section){
     return sectionsArray;
 }
 
+/**
+ * Esta função imprime informações sobre as seccões do armazém, incluindo o id,
+ * a categoria, a capacidade, a quantidade e a faturação total de cada seção.
+ * @param section Referência à struct section.
+ * @param sectionsArray Ponteiro para o array de seccões do armazém.
+ */
 void printSection(Section& section, Section* sectionsArray){
     std::cout << "          *********************************************" << std::endl;
     std::cout << "          *** Armazem EDA  |  Total Faturacao " << section.totalIncome << " $" << " ***" << std::endl;
@@ -33,6 +45,12 @@ void printSection(Section& section, Section* sectionsArray){
     }
 }
 
+/**
+ * Esta função calcula a capacidade total de todas as seccões do armazém.
+ * @param section Referência à struct section.
+ * @param sectionsArray Ponteiro para o array de seções do armazém.
+ * @return A capacidade total de todas as seções do armazém.
+ */
 int sectionsCapacity(Section& section, Section* sectionsArray){
     int totalCapacity = 0;
     for (int i = 0; i < section.tamanho; i++){

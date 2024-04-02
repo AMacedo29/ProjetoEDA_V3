@@ -123,15 +123,15 @@ void mudaCategoria(Section* sectionarray, Section& section){
             break; // Sai do loop se a secção for válida
         }
     } while(true);
-        std::cout << "Digite a categoria que deseja alterar" << std::endl;
-        std::cin >> mudacategoria;
-        for(int i = 0; i < section.tamanho; ++i){
-            if(sectionchange == sectionarray[i].id){
-                sectionarray[i].category = mudacategoria;
-                std::cout << "Categoria alterada com secesso." << std::endl;
-                break;
-            }
+    std::cout << "Digite a categoria que deseja alterar" << std::endl;
+    std::cin >> mudacategoria;
+    for(int i = 0; i < section.tamanho; ++i){
+        if(sectionchange == sectionarray[i].id){
+            sectionarray[i].category = mudacategoria;
+            std::cout << "Categoria alterada com secesso." << std::endl;
+            break;
         }
+    }
 }
 /**
  * Função para adicionar uma nova secção

@@ -17,7 +17,7 @@ Peca* iniciarListaChegada(Section& section, Section* sectionsArray);
 
 void printListaChegada(Peca* listaChegada);
 
-void ordenarListaPorMarca(Peca* listaChegada);
+//void ordenarListaPorMarca(Peca* listaChegada);
 
 void ordenarListaPorPreco(Peca* listaChegada);
 
