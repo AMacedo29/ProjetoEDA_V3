@@ -187,6 +187,14 @@ Section* addSection(Section*& sectionarray, Section& section) {
 
 
 //3.2 Implementar promoção
+/**
+ * Esta função aplica uma promoção a uma seccão específica do armazém, reduzindo o preço das peças
+ * dessa seccão por uma certa duração e aumentando a
+ * probabilidade de venda das peças afetadas.
+ * @param section Referência à struct section contendo informações sobre o armazém.
+ * @param sectionsArray Ponteiro para o array de seções do armazém.
+ * @param totalCapacity Capacidade total do armazém.
+ */
 void promocao(Section& section, Section* sectionsArray, int totalCapacity){
     char id;
     int desconto;
