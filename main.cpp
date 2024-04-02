@@ -9,6 +9,15 @@
 
 int dia=1;
 int NextDayPecas = 10;
+/**
+ * Função para com menu para pedir ao utizador de que forma quer ordenar a lista de chegada
+ * @param listaChegada - Ponteiro para a lista de  chegada
+ * @return - Retorna 0
+ * Explicação: Pede ao utizador valores 1 ou 2
+ * 1 - Faz ordenação da lista pela Marca;
+ * 2 - Faz ordenação da lista por preco;
+ * Ao inserir 0 sai do menu;
+ */
 int sub_menu(Peca* listaChegada){
     bool sair = false;
     char optionsub;
@@ -42,7 +51,18 @@ int sub_menu(Peca* listaChegada){
     return 0;
 }
 
-
+/**
+ * Função do menu para a gestão
+ * @param sectionsArray - Ponteiro para a secção
+ * @param listaChegada - Ponteiro para lista de chegada
+ * @param section - Referncias para Secções
+ * Explicação:
+ * Este menu serve para a gestão do armazem, no qual, o utilizador tem a possibilidade, vender pecas manualmente,
+ * adicionar promoca, mudar a categoria, adicionar secção ao armazem
+ * gravar os dados em ficheiro e imprimir armzem;
+ * Ao inserir 0 sai do menu;
+ * Os parametros são usados para funções
+ */
 void menu_manager(Section* sectionsArray, Peca* listaChegada, Section& section) {
     bool sair = false;
     char option;
