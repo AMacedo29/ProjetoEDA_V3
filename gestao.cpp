@@ -1,5 +1,6 @@
 #include <string>
 #include <iostream>
+#include <fstream>
 #include "pecas.h"
 #include "sections.h"
 
@@ -178,5 +179,48 @@ void promocao(Section& section, Section* sectionsArray, int totalCapacity){
                 }
             }
         }
+    }
+}
+
+
+//3.5 - Gravar Armazém em Ficheiros
+
+void gravarlistachegada(Peca* listaChegada){
+    std::fstream file("listachegada.txt", std::ios::out);
+    if(file.is_open()){
+        file << "Lista de Chegada" << std::endl;
+        for (int i = 0; i < 15; ++i) {
+            file << listaChegada[i].category << " | " << listaChegada[i].brand << " | " << listaChegada[i].serialNumber << " | " << listaChegada[i].price << std::endl;
+        }
+        file.close();
+        std::cout << "Gravado com sucesso"<< std::endl;
+    } else {
+        std::cerr << "Erro ao guardar lista de chegada no ficheiro" << std::endl;
+    }
+}
+
+
+void gravararmazem(Section* sectionsArray, Section& section){
+    std::fstream file("Armazem.txt", std::ios::out);
+    if(file.is_open()){
+        file << "  Seccao " << " | " << " Categoria " << " | " << " Capacidade " << " | " << " Quantidade " << " | " << " Facturacao " << " | " << std::endl;
+        for (int i = 0; i < section.tamanho; ++i) {
+            file << sectionsArray[i].id << " | " << sectionsArray[i].category << " | " << sectionsArray[i].capacity << " | " << sectionsArray[i].quantity << " | " << "0" << std::endl;
+        }
+        file.close();
+        std::cout << "Gravado armazem com sucesso" << std::endl;
+    } else {
+        std::cout << "Erro ao guardar armazem no ficheiro" << std::endl;
+    }
+}
+
+void gravartotalfacturamente(Section& section){
+    std::fstream file("FacturamentoArmazem.txt", std::ios::out);
+    if(file.is_open()){
+        file << "Total Facturamento Armazem: " << section.totalIncome << " $";
+        file.close();
+        std::cout << "Gravado Total Armazem com sucesso" << std::endl;
+    } else {
+        std::cout << "Erro ao gravar Total Armazem no ficheiro" << std::endl;
     }
 }

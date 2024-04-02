@@ -61,7 +61,10 @@ void menu_manager(Section* sectionsArray, Peca* listaChegada, Section& section) 
                  */
                 break;
             case '5':
-                std::cout << "Escolheu a opcao 5 - Gravar Armazem " << std::endl;
+                gravartotalfacturamente(section);
+                gravarlistachegada(listaChegada);
+                gravararmazem(sectionsArray, section);
+                //std::cout << "Escolheu a opcao 5 - Gravar Armazem " << std::endl;
                 break;
             case '6':
                 std::cout << "Escolheu a opcao 6 - Carregar Armazem " << std::endl;

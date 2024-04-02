@@ -15,4 +15,10 @@ void mudaCategoria(Section* sectionarray, Section& section);
 
 void promocao(Section& section, Section* sectionsArray, int totalCapacity);
 
+void gravarlistachegada(Peca* listaChegada);
+
+void gravararmazem(Section* sectionsArray, Section& section);
+
+void gravartotalfacturamente(Section& section);
+
 #endif //PROJETOEDA_GESTAO_H
