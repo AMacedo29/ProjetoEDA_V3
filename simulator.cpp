@@ -87,11 +87,15 @@ void printNewSection(Section& section, Section* sectionsArray, int totalCapacity
         std::cout << " Seccao " << sectionsArray[i].id << "  | " << " Categoria: " << sectionsArray[i].category
                   << "  | " << " Capacidade: " << sectionsArray[i].capacity << "  | " << " Quantidade: " << sectionsArray[i].quantity << "  | "
                   << " Faturacao: " << "0" << std::endl;
-        for (int j = 0; j < totalCapacity && j < 8; j++) {
+        int count = 0;
+        for (int j = 0; j < totalCapacity; j++) {
             if (section.listaEspera[j].category == sectionsArray[i].category) {
                 std::cout << "      " << section.listaEspera[j].category << "  |  " << section.listaEspera[j].brand
                 << "  |  " << section.listaEspera[j].serialNumber << "  |  "
                 << section.listaEspera[j].price << " $" << std::endl;
+                count++;
+                if (count == 8)
+                    break;
             }
         }
     }
