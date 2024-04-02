@@ -181,3 +181,5 @@ void removerPecasVendidas(Section& section, int totalCapacity) {
     totalCapacity -= numToRemove;
 }
 
+
+
